@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import Bed_Booking from "../assets/Images/Bed-Booking.png";
 import OurPolicies from "./OurPolicies";
 import Footer from "./Footer";
@@ -48,10 +48,14 @@ const BedBooking = () => {
   const [pinCode, setPinCode] = useState("");
   const [hospitalNameError, setHospitalNameError] = useState("");
   const [pinCodeError, setPinCodeError] = useState("");
-  
+
   const [hospitalTypeFocused, setHospitalTypeFocused] = useState(false);
   const [hospitalBedFocused, setHospitalBedFocused] = useState(false);
   const [advancedSearchFocused, setAdvancedSearchFocused] = useState(false);
+
+  const hospitalTypeRef = useRef(null);
+  const hospitalBedRef = useRef(null);
+  const advancedSearchRef = useRef(null);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -88,16 +92,58 @@ const BedBooking = () => {
     return /^[A-Z]/.test(name);
   };
 
+  const handleHospitalTypeFocus = () => {
+    setHospitalTypeFocused(true);
+    if (hospitalTypeRef.current) {
+      hospitalTypeRef.current.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }
+  };
+
+  const handleHospitalTypeBlur = () => {
+    setHospitalTypeFocused(false);
+  };
+
+  const handleHospitalBedFocus = () => {
+    setHospitalBedFocused(true);
+    if (hospitalBedRef.current) {
+      hospitalBedRef.current.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }
+  };
+
+  const handleHospitalBedBlur = () => {
+    setHospitalBedFocused(false);
+  };
+
+  const handleAdvancedSearchFocus = () => {
+    setAdvancedSearchFocused(true);
+    if (advancedSearchRef.current) {
+      advancedSearchRef.current.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }
+  };
+
+  const handleAdvancedSearchBlur = () => {
+    setAdvancedSearchFocused(false);
+  };
+
   return (
     <div>
-      <div className="lg:hidden">
+      <div className="xl:hidden">
         <MobileNavbar />
       </div>
-      <div className="hidden lg:flex">
+      <div className="hidden xl:flex">
         <Navbar />
       </div>
 
-      <div className="flex lg:hidden fixed top-[83px] sm:top-[100px] bg-white">
+      <div className="flex xl:hidden fixed top-[83px] sm:top-[105px] bg-white">
         <ScrollingTagline />
       </div>
       <div className="mt-[135px] xl:mt-36 pt-4 py-10 bg-opacity-80">
@@ -127,11 +173,14 @@ const BedBooking = () => {
                     id="hospital-type"
                     className="border border-blue-500 h-10 outline-none rounded-md px-3 max-w-[85%]"
                     required
-                    onFocus={() => setHospitalTypeFocused(true)}
-                    onBlur={() => setHospitalTypeFocused(false)}
+                    onFocus={handleHospitalTypeFocus}
+                    onBlur={handleHospitalTypeBlur}
+                    ref={hospitalTypeRef}
                   >
                     <option value="">
-                      {hospitalTypeFocused ? "Select-Hospital-Type" : "Select Hospital Type"}
+                      {hospitalTypeFocused
+                        ? "Select-Hospital-Type"
+                        : "Select Hospital Type"}
                     </option>
                     <option value="government">Government Hospital</option>
                     <option value="private">Private Hospital</option>
@@ -142,18 +191,20 @@ const BedBooking = () => {
                     htmlFor="hospital-bed"
                     className="font-semibold text-blue-900"
                   >
-                    Select Hospital Bed{" "}
-                    <span className="text-red-500">*</span>
+                    Select Hospital Bed <span className="text-red-500">*</span>
                   </label>
                   <select
                     id="hospital-bed"
                     className="border border-blue-500 h-10 outline-none rounded-md px-3 max-w-[85%]"
                     required
-                    onFocus={() => setHospitalBedFocused(true)}
-                    onBlur={() => setHospitalBedFocused(false)}
+                    onFocus={handleHospitalBedFocus}
+                    onBlur={handleHospitalBedBlur}
+                    ref={hospitalBedRef}
                   >
                     <option value="">
-                      {hospitalBedFocused ? "Select-Hospital-Bed" : "Select Hospital Bed"}
+                      {hospitalBedFocused
+                        ? "Select-Hospital-Bed"
+                        : "Select Hospital Bed"}
                     </option>
                     {HospitalBed.map((bed, index) => (
                       <option key={index} value={bed} className="text-sm">
@@ -167,18 +218,20 @@ const BedBooking = () => {
                     htmlFor="advanced-search"
                     className="font-semibold text-blue-900"
                   >
-                    Advanced Search{" "}
-                    <span className="text-red-500">*</span>
+                    Advanced Search <span className="text-red-500">*</span>
                   </label>
                   <select
                     id="advanced-search"
                     className="border border-blue-500 h-10 outline-none rounded-md px-3 max-w-[85%]"
                     required
-                    onFocus={() => setAdvancedSearchFocused(true)}
-                    onBlur={() => setAdvancedSearchFocused(false)}
+                    onFocus={handleAdvancedSearchFocus}
+                    onBlur={handleAdvancedSearchBlur}
+                    ref={advancedSearchRef}
                   >
                     <option value="">
-                      {advancedSearchFocused ? "Select-Hospital" : "Select Hospital"}
+                      {advancedSearchFocused
+                        ? "Select-Hospital"
+                        : "Select Hospital"}
                     </option>
                     {Hospitals.map((hospital, index) => (
                       <option key={index} value={hospital} className="text-sm">
@@ -192,8 +245,7 @@ const BedBooking = () => {
                     htmlFor="hospital-name"
                     className="font-semibold text-blue-900"
                   >
-                    Hospital Name{" "}
-                    <span className="text-red-500">*</span>
+                    Hospital Name <span className="text-red-500">*</span>
                   </label>
                   <input
                     type="text"
@@ -211,12 +263,8 @@ const BedBooking = () => {
                   )}
                 </div>
                 <div className="flex flex-col">
-                  <label
-                    htmlFor="city"
-                    className="font-semibold text-blue-900"
-                  >
-                    City{" "}
-                    <span className="text-red-500">*</span>
+                  <label htmlFor="city" className="font-semibold text-blue-900">
+                    City <span className="text-red-500">*</span>
                   </label>
                   <input
                     type="text"
@@ -233,8 +281,7 @@ const BedBooking = () => {
                     htmlFor="pincode"
                     className="font-semibold text-blue-900"
                   >
-                    Pincode{" "}
-                    <span className="text-red-500">*</span>
+                    Pincode <span className="text-red-500">*</span>
                   </label>
                   <input
                     type="text"
@@ -246,9 +293,7 @@ const BedBooking = () => {
                     required
                   />
                   {pinCodeError && (
-                    <span className="text-red-500 text-sm">
-                      {pinCodeError}
-                    </span>
+                    <span className="text-red-500 text-sm">{pinCodeError}</span>
                   )}
                 </div>
               </div>
@@ -271,4 +316,4 @@ const BedBooking = () => {
   );
 };
 
-export default BedBooking;
+export default BedBooking;

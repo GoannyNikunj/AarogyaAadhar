@@ -9,25 +9,24 @@ import ScrollingTagline from "./ScrollingTagline";
 const ApplyHealthCard = () => {
   return (
     <>
-      <div className="lg:hidden">
+      <div className="xl:hidden">
         <MobileNavbar />
       </div>
-      <div className="hidden lg:flex">
+      <div className="hidden xl:flex">
         <Navbar />
-        <div className="flex lg:hidden fixed top-[83px] sm:top-[100px] bg-white">
+        <div className="flex xl:hidden fixed top-[83px] sm:top-[105px] bg-white">
           <ScrollingTagline />
         </div>
       </div>
       <div className="mt-[135px] xl:mt-36 pt-4 py-3m px-2 sm:px-4 md:mb-20">
         <h2 className="text-2xl md:text-4xl font-bold text-center text-blue-900">
-          Aarogya Aadhar Member Registration Form
+          Aarogya Aadhar Member Registration Detail
         </h2>
         <hr className="my-4 mx-4" />
-
         <div className="col-span-12 md:col-span-8">
-          <p className="font-semibold text-lg sm:text-2xl py-1 mb-2 text-blue-900">
+          {/* <p className="text-2xl md:text-4xl font-bold text-center text-blue-900">
             Aarogya Aadhar Member Registration Details:
-          </p>
+          </p> */}
           <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-2">
             <div className="flex flex-col">
               <label htmlFor="" className="font-semibold text-blue-900">

@@ -1,4 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
+import { FaCalendarAlt } from "react-icons/fa";
 import Book_Free_Appointment from "../assets/Images/Book-Free-Appointment.png";
 import MobileNavbar from "./MobileNavabr";
 import Navbar from "./Navbar";
@@ -10,7 +13,7 @@ const BookAppointment = () => {
   const [firstName, setFirstName] = useState("");
   const [middleName, setMiddleName] = useState("");
   const [lastName, setLastName] = useState("");
-  const [dob, setDob] = useState("");
+  const [dob, setDob] = useState(null); // Use null for initial state
   const [gender, setGender] = useState("");
   const [category, setCategory] = useState("");
   const [mobile, setMobile] = useState("");
@@ -64,56 +67,21 @@ const BookAppointment = () => {
   const [pinCodeError, setPinCodeError] = useState("");
   const [aadharError, setAadharError] = useState("");
 
+  const categoryRef = useRef(null);
+  const datePickerRef = useRef(null); // Add a ref for the DatePicker
+
+  const handleDateChange = (date) => {
+    setDob(date); // Set the selected date object
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
-
-    setFirstNameError("");
-    setMiddleNameError("");
-    setLastNameError("");
-    setMobileError("");
-    setPinCodeError("");
-    setAadharError("");
-
-    if (!isCapitalized(firstName)) {
-      setFirstNameError("First name should start with a capital letter.");
-    }
-
-    if (!isCapitalized(middleName)) {
-      setMiddleNameError("Middle name should start with a capital letter.");
-    }
-
-    if (!isCapitalized(lastName)) {
-      setLastNameError("Last name should start with a capital letter.");
-    }
-
-    if (mobile.length !== 10) {
-      setMobileError("Mobile number must be 10 digits.");
-    }
-
-    if (pinCode.length !== 6) {
-      setPinCodeError("Pin code must be 6 digits.");
-    }
-
-    if (aadhar.length !== 12) {
-      setAadharError("Aadhaar number must be 12 digits.");
-    }
-
-    if (
-      firstNameError ||
-      middleNameError ||
-      lastNameError ||
-      mobileError ||
-      pinCodeError ||
-      aadharError
-    ) {
-      return;
-    }
-
+    // Handle form submission with all state values including dob
     console.log("Form submitted:", {
       firstName,
       middleName,
       lastName,
-      dob,
+      dob: dob ? formatDate(dob) : "",
       gender,
       category,
       mobile,
@@ -125,8 +93,16 @@ const BookAppointment = () => {
     });
   };
 
-  const isCapitalized = (name) => {
-    return /^[A-Z]/.test(name);
+  const formatDate = (date) => {
+    const d = new Date(date);
+    const year = d.getFullYear();
+    let month = "" + (d.getMonth() + 1);
+    let day = "" + d.getDate();
+
+    if (month.length < 2) month = "0" + month;
+    if (day.length < 2) day = "0" + day;
+
+    return [day, month, year].join("/");
   };
 
   const handleCategoryChange = (e) => {
@@ -145,15 +121,30 @@ const BookAppointment = () => {
     }
   };
 
+  const handleCategoryFocus = () => {
+    if (categoryRef.current && !category) {
+      categoryRef.current.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }
+  };
+
+  const handleDatePickerClick = () => {
+    if (datePickerRef.current) {
+      datePickerRef.current.setFocus(); // Focus the DatePicker input
+    }
+  };
+
   return (
     <>
-      <div className=" lg:hidden">
+      <div className="xl:hidden">
         <MobileNavbar />
       </div>
-      <div className=" hidden lg:flex">
+      <div className="hidden xl:flex">
         <Navbar />
       </div>
-      <div className=" flex lg:hidden fixed top-[83px] sm:top-[100px] bg-white">
+      <div className="flex xl:hidden fixed top-[83px] sm:top-[105px] bg-white">
         <ScrollingTagline />
       </div>
       <div className="mt-[135px] xl:mt-[145px] pt-3 py-3">
@@ -162,14 +153,11 @@ const BookAppointment = () => {
         </h2>
         <hr className="mt-[1px] mx-4" />
         <div className="grid md:grid-cols-12 gap-3 py-4 px-3">
-          <div className="col-span-12 md:col-span-4 w-full pt-0 flex flex-col justify-center items-center">
+          <div className="col-span-12 md:col-span-4 w-full pt- flex flex-col justify-center items-center">
             <img src={Book_Free_Appointment} alt="Book Free Appointment" />
           </div>
           <div className="col-span-12 md:col-span-8">
             <form onSubmit={handleSubmit}>
-              {/* <p className="font-semibold text-2xl py-1 mb-2 text-blue-900">
-                Patient Details:
-              </p> */}
               <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-2">
                 <div className="flex flex-col">
                   <label
@@ -237,18 +225,25 @@ const BookAppointment = () => {
                     </span>
                   )}
                 </div>
-                <div className="flex flex-col">
+                <div className="flex flex-col relative">
                   <label htmlFor="dob" className="font-semibold text-blue-900">
                     Date of Birth <span className="text-red-500">*</span>
                   </label>
-                  <input
-                    type="date"
-                    id="dob"
-                    value={dob}
-                    onChange={(e) => setDob(e.target.value)}
-                    className="border border-blue-500 h-10 outline-none rounded-md px-3 max-w-[85%] placeholder-text"
-                    required
-                  />
+                  <div
+                    className="flex items-center border border-blue-500 h-10 outline-none rounded-md px-3 max-w-[85%] relative cursor-pointer"
+                    onClick={handleDatePickerClick}
+                  >
+                    <DatePicker
+                      selected={dob}
+                      onChange={handleDateChange}
+                      dateFormat="dd/MM/yyyy"
+                      placeholderText="DD/MM/YYYY"
+                      className="w-full outline-none"
+                      ref={datePickerRef} // Assign the ref to DatePicker
+                      required
+                    />
+                    <FaCalendarAlt className="absolute right-3 text-blue-500 pointer-events-none" />
+                  </div>
                 </div>
                 <div className="flex flex-col">
                   <label
@@ -287,6 +282,8 @@ const BookAppointment = () => {
                     id="category"
                     value={category}
                     onChange={handleCategoryChange}
+                    onFocus={handleCategoryFocus}
+                    ref={categoryRef}
                     className="border border-blue-500 h-10 outline-none rounded-md px-3 max-w-[85%] placeholder-text"
                     required
                   >
@@ -296,7 +293,7 @@ const BookAppointment = () => {
                       </option>
                     )}
                     {ExpertDoctor.map((doctor, index) => (
-                      <option key={index} value={doctor} className="text-sm">
+                      <option key={index} value={doctor}>
                         {doctor}
                       </option>
                     ))}
@@ -307,10 +304,10 @@ const BookAppointment = () => {
                     htmlFor="mobile"
                     className="font-semibold text-blue-900"
                   >
-                    Mobile <span className="text-red-500">*</span>
+                    Mobile Number <span className="text-red-500">*</span>
                   </label>
                   <input
-                    type="tel"
+                    type="text"
                     id="mobile"
                     value={mobile}
                     onChange={(e) => setMobile(e.target.value)}
@@ -323,7 +320,10 @@ const BookAppointment = () => {
                   )}
                 </div>
                 <div className="flex flex-col">
-                  <label htmlFor="email" className="font-semibold text-blue-900">
+                  <label
+                    htmlFor="email"
+                    className="font-semibold text-blue-900"
+                  >
                     Email
                   </label>
                   <input
@@ -331,13 +331,13 @@ const BookAppointment = () => {
                     id="email"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
-                    placeholder="Enter Email Address"
+                    placeholder="Enter Email"
                     className="border border-blue-500 h-10 outline-none rounded-md px-3 max-w-[85%] placeholder-text"
                   />
                 </div>
                 <div className="flex flex-col">
                   <label htmlFor="otp" className="font-semibold text-blue-900">
-                    OTP
+                    OTP <span className="text-red-500">*</span>
                   </label>
                   <input
                     type="text"
@@ -346,6 +346,7 @@ const BookAppointment = () => {
                     onChange={(e) => setOtp(e.target.value)}
                     placeholder="Enter OTP"
                     className="border border-blue-500 h-10 outline-none rounded-md px-3 max-w-[85%] placeholder-text"
+                    required
                   />
                 </div>
                 <div className="flex flex-col">
@@ -357,7 +358,7 @@ const BookAppointment = () => {
                     id="city"
                     value={city}
                     onChange={(e) => setCity(e.target.value)}
-                    placeholder="Enter City Name"
+                    placeholder="Enter City"
                     className="border border-blue-500 h-10 outline-none rounded-md px-3 max-w-[85%] placeholder-text"
                   />
                 </div>
@@ -369,7 +370,7 @@ const BookAppointment = () => {
                     Pin Code <span className="text-red-500">*</span>
                   </label>
                   <input
-                    type="number"
+                    type="text"
                     id="pinCode"
                     value={pinCode}
                     onChange={(e) => setPinCode(e.target.value)}
@@ -389,7 +390,7 @@ const BookAppointment = () => {
                     Aadhar Number <span className="text-red-500">*</span>
                   </label>
                   <input
-                    type="number"
+                    type="text"
                     id="aadhar"
                     value={aadhar}
                     onChange={(e) => setAadhar(e.target.value)}
@@ -402,18 +403,22 @@ const BookAppointment = () => {
                   )}
                 </div>
               </div>
-              <button
-                type="submit"
-                className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-4 mx-auto block"
-              >
-                Book Appointment
-              </button>
+              <div className="flex justify-center items-center mt-4">
+                <button
+                  type="submit"
+                  className="bg-blue-700 text-white font-semibold rounded-md py-2 px-4"
+                >
+                  Submit
+                </button>
+              </div>
             </form>
           </div>
         </div>
       </div>
-      <OurPolicies />
-      <Footer />
+      <div className="py-4">
+        <OurPolicies />
+        <Footer />
+      </div>
     </>
   );
 };

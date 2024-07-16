@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import Ambulance_Service from "../assets/Images/Book-Ambulance.png";
 import { IoMdLocate } from "react-icons/io";
 import MobileNavbar from "./MobileNavabr";
@@ -9,6 +9,9 @@ import ScrollingTagline from "./ScrollingTagline";
 
 const BookAmbulance = () => {
   const fileInputRef = useRef(null);
+  const [selectedAmbulance, setSelectedAmbulance] = useState("");
+  const [selectedAmbulanceType, setSelectedAmbulanceType] = useState("");
+  const [selectedHospital, setSelectedHospital] = useState("");
 
   const handleButtonClick = () => {
     fileInputRef.current.click();
@@ -16,13 +19,13 @@ const BookAmbulance = () => {
 
   return (
     <>
-      <div className="lg:hidden">
+      <div className="xl:hidden">
         <MobileNavbar />
       </div>
-      <div className="hidden lg:flex">
+      <div className="hidden xl:flex">
         <Navbar />
       </div>
-      <div className="flex lg:hidden fixed top-[83px] sm:top-[100px] bg-white">
+      <div className="flex xl:hidden fixed top-[83px] sm:top-[105px] bg-white">
         <ScrollingTagline />
       </div>
       <div className="mt-[135px] xl:mt-36 pt-4 py-3">
@@ -47,7 +50,8 @@ const BookAmbulance = () => {
                 </p>
                 <p className="text-center text-blue-900">24/7 Available</p>
                 <p className="text-center text-lg text-blue-900 font-semibold">
-                  If any accident case please follow below protocol and save life.
+                  If any accident case please follow below protocol and save
+                  life.
                 </p>
                 <p className="text-center text-lg text-blue-900 font-semibold">
                   Aarogya Aadhar is taking all responsibilities.
@@ -91,7 +95,7 @@ const BookAmbulance = () => {
                   type="text"
                   id="pin-code"
                   placeholder="Enter Pin Code"
-                  className="border border-blue-500 h-10 outline-none rounded-md px-3 max-w-[85%] placeholder-text"
+                  className="border border-blue-500 h-12 outline-none rounded-md px-3 max-w-[85%] placeholder-text"
                 />
               </div>
 
@@ -106,30 +110,31 @@ const BookAmbulance = () => {
                   type="text"
                   id="mobile-no"
                   placeholder="Enter Mobile No."
-                  className="border border-blue-500 h-10 outline-none rounded-md px-3 max-w-[85%] placeholder-text"
+                  className="border border-blue-500 h-12 outline-none rounded-md px-3 max-w-[85%] placeholder-text"
                 />
               </div>
 
-              <div className="flex flex-col">
+              <div className="flex flex-col relative">
                 <label
                   htmlFor="patient-otp"
                   className="font-semibold text-blue-900"
                 >
                   Enter OTP <span className="text-red-500">*</span>
                 </label>
-                <div className="flex">
+                <div className="relative border border-blue-500 rounded-md px-3 max-w-[85%]">
                   <input
                     type="text"
                     id="patient-otp"
                     placeholder="Enter OTP"
-                    className="border border-blue-500 w-full h-10 outline-none rounded-tl-md rounded-bl-md px-3 max-w-[85%] placeholder-text"
+                    className="h-12 outline-none rounded-md placeholder-text flex-grow"
                   />
-                  <button className="w-full sm:w-38 h-10 text-white bg-blue-900 rounded-tr-md rounded-br-md whitespace-nowrap">
-                    VERIFIED OTP
+                  <button className="absolute inset-y-0 right-0 bg-blue-900 text-white rounded-md px-3">
+                    GET OTP
                   </button>
                 </div>
               </div>
-              <button className="flex justify-center items-center bg-blue-900 mt-6 text-white h-10 rounded-md w-full">
+
+              <button className="flex justify-center items-center bg-blue-900 mt-6 text-white h-12 rounded-md w-full">
                 Locate Me{" "}
                 <span className="ml-2">
                   <IoMdLocate className="h-5 w-5" />
@@ -145,14 +150,13 @@ const BookAmbulance = () => {
                   htmlFor="first-name"
                   className="font-semibold text-blue-900"
                 >
-                  First Name{" "}
-                  <span className="text-red-500">*</span>{" "}
+                  First Name <span className="text-red-500">*</span>{" "}
                 </label>
                 <input
                   type="text"
                   id="first-name"
                   placeholder="Enter First Name"
-                  className="border border-blue-500 h-10 outline-none rounded-md px-3 max-w-[85%] placeholder-text"
+                  className="border border-blue-500 h-12 outline-none rounded-md px-3 max-w-[85%] placeholder-text"
                 />
               </div>
 
@@ -161,14 +165,13 @@ const BookAmbulance = () => {
                   htmlFor="middle-name"
                   className="font-semibold text-blue-900"
                 >
-                  Middle Name{" "}
-                  <span className="text-red-500">*</span>{" "}
+                  Middle Name <span className="text-red-500">*</span>{" "}
                 </label>
                 <input
                   type="text"
                   id="middle-name"
                   placeholder="Enter Middle Name"
-                  className="border border-blue-500 h-10 outline-none rounded-md px-3 max-w-[85%] placeholder-text"
+                  className="border border-blue-500 h-12 outline-none rounded-md px-3 max-w-[85%] placeholder-text"
                 />
               </div>
 
@@ -183,7 +186,7 @@ const BookAmbulance = () => {
                   type="text"
                   id="last-name"
                   placeholder="Enter Last Name"
-                  className="border border-blue-500 h-10 outline-none rounded-md px-3 max-w-[85%] placeholder-text"
+                  className="border border-blue-500 h-12 outline-none rounded-md px-3 max-w-[85%] placeholder-text"
                 />
               </div>
 
@@ -194,7 +197,7 @@ const BookAmbulance = () => {
                 <input
                   type="date"
                   id="dob"
-                  className="border border-blue-500 h-10 outline-none rounded-md px-3 max-w-[85%] placeholder-text"
+                  className="border border-blue-500 h-12 outline-none rounded-md px-3 max-w-[85%] placeholder-text"
                 />
               </div>
 
@@ -204,7 +207,7 @@ const BookAmbulance = () => {
                 </label>
                 <select
                   id="gender"
-                  className="border border-blue-500 h-10 outline-none rounded-md px-3 max-w-[85%] placeholder-text"
+                  className="border border-blue-500 h-12 outline-none rounded-md px-3 max-w-[85%] placeholder-text"
                 >
                   <option value="">Select Gender</option>
                   <option value="male">Male</option>
@@ -213,23 +216,22 @@ const BookAmbulance = () => {
                 </select>
               </div>
 
-              <div className="flex flex-col">
+              <div className="flex flex-col relative">
                 <label
                   htmlFor="patient-mobile-no"
                   className="font-semibold text-blue-900"
                 >
-                  Mobile No{" "}
-                  <span className="text-red-500">*</span>
+                  Mobile No <span className="text-red-500">*</span>
                 </label>
                 <input
                   type="text"
                   id="patient-mobile-no"
                   placeholder="Enter Mobile No."
-                  className="border border-blue-500 h-10 outline-none rounded-md px-3 max-w-[85%] placeholder-text"
+                  className="border border-blue-500 h-12 outline-none rounded-md px-3 max-w-[85%] placeholder-text"
                 />
               </div>
 
-              <div className="flex flex-col">
+              <div className="flex flex-col relative">
                 <label
                   htmlFor="patient-email"
                   className="font-semibold text-blue-900"
@@ -237,35 +239,36 @@ const BookAmbulance = () => {
                   Email ID
                   <span className="text-red-500">*</span>
                 </label>
-                <div className="flex">
+                <div className="relative border border-blue-500 rounded-md px-3 max-w-[85%]">
                   <input
                     type="text"
                     id="patient-email"
                     placeholder="Enter Email ID"
-                    className="border border-blue-500 w-27 sm:w-32 h-10 outline-none rounded-tl-md rounded-bl-md px-3 placeholder-text"
+                    className="h-12 outline-none rounded-md placeholder-text flex-grow"
                   />
-                  <button className="w-35 sm:w-35 h-10 text-white bg-blue-900 rounded-tr-md rounded-br-md ml-0">
+                  <button className="absolute inset-y-0 right-0 bg-blue-900 text-white rounded-md px-3">
                     GET OTP
-                  </button> 
+                  </button>
                 </div>
               </div>
 
               <div className="flex flex-col">
                 <label
-                  htmlFor="patient-otp"
+                  htmlFor="patient-email-otp"
                   className="font-semibold text-blue-900"
                 >
-                  Enter OTP <span className="text-red-500">*</span>
+                  Enter Email OTP
+                  <span className="text-red-500">*</span>
                 </label>
-                <div className="flex">
+                <div className="relative border border-blue-500 rounded-md px-3 max-w-[85%]">
                   <input
                     type="text"
-                    id="patient-otp"
-                    placeholder="Enter OTP"
-                    className="border border-blue-500 w-27 sm:w-32 h-10 outline-none rounded-tl-md rounded-bl-md px-3  placeholder-text"
+                    id="patient-email-otp"
+                    placeholder="Enter Email OTP"
+                    className="h-12 outline-none rounded-md placeholder-text flex-grow"
                   />
-                  <button className="w-35 sm:w-35 h-10 text-white bg-blue-900 rounded-tr-md rounded-br-md ml-0">
-                      VERIFIED OTP
+                  <button className="absolute inset-y-0 right-0 bg-blue-900 text-white rounded-md px-2">
+                    VERIFY OTP
                   </button>
                 </div>
               </div>
@@ -275,14 +278,15 @@ const BookAmbulance = () => {
                   htmlFor="select-ambulance"
                   className="font-semibold text-blue-900"
                 >
-                  Select Ambulance{" "}
-                  <span className="text-red-500">*</span>
+                  Select Ambulance <span className="text-red-500">*</span>
                 </label>
                 <select
-                  id="select-ambulancae"
-                  className="border border-blue-500 h-10 outline-none rounded-md px-3 max-w-[85%] placeholder-text"
+                  id="select-ambulance"
+                  className="border border-blue-500 h-12 outline-none rounded-md px-3 max-w-[85%] placeholder-text"
+                  value={selectedAmbulance}
+                  onChange={(e) => setSelectedAmbulance(e.target.value)}
                 >
-                  <option value="">Select Ambulance </option>
+                  <option value="">Select Ambulance</option>
                   <option value="govt-108">Government 108</option>
                   <option value="private">Private Ambulance</option>
                   <option value="hospital">Hospital Ambulance</option>
@@ -294,12 +298,13 @@ const BookAmbulance = () => {
                   htmlFor="ambulance-type"
                   className="font-semibold text-blue-900"
                 >
-                  Ambulance Type{" "}
-                  <span className="text-red-500">*</span>
+                  Ambulance Type <span className="text-red-500">*</span>
                 </label>
                 <select
                   id="ambulance-type"
-                  className="border border-blue-500 h-10 outline-none rounded-md px-3 max-w-[85%] placeholder-text"
+                  className="border border-blue-500 h-12 outline-none rounded-md px-3 max-w-[85%] placeholder-text"
+                  value={selectedAmbulanceType}
+                  onChange={(e) => setSelectedAmbulanceType(e.target.value)}
                 >
                   <option value="">Select Ambulance Type</option>
                   <option value="basic">Basic Ambulance</option>
@@ -317,7 +322,9 @@ const BookAmbulance = () => {
                 </label>
                 <select
                   id="hospital"
-                  className="border border-blue-500 h-10 outline-none rounded-md px-3 max-w-[85%] placeholder-text"
+                  className="border border-blue-500 h-12 outline-none rounded-md px-3 max-w-[85%] placeholder-text"
+                  value={selectedHospital}
+                  onChange={(e) => setSelectedHospital(e.target.value)}
                 >
                   <option value="">Select Hospital</option>
                   <option value="private">Private Hospital</option>
@@ -326,17 +333,14 @@ const BookAmbulance = () => {
               </div>
 
               <div className="flex flex-col">
-                <label
-                  htmlFor="city"
-                  className="font-semibold text-blue-900"
-                >
+                <label htmlFor="city" className="font-semibold text-blue-900">
                   City <span className="text-red-500">*</span>
                 </label>
                 <input
                   type="text"
                   id="city"
                   placeholder="Enter City Name"
-                  className="border border-blue-500 h-10 outline-none rounded-md px-3 max-w-[85%] placeholder-text"
+                  className="border border-blue-500 h-12 outline-none rounded-md px-3 max-w-[85%] placeholder-text"
                 />
               </div>
 
@@ -351,23 +355,19 @@ const BookAmbulance = () => {
                   type="text"
                   id="patient-pin-code"
                   placeholder="Enter Pin Code"
-                  className="border border-blue-500 h-10 outline-none rounded-md px-3 max-w-[85%] placeholder-text"
+                  className="border border-blue-500 h-12 outline-none rounded-md px-3 max-w-[85%] placeholder-text"
                 />
               </div>
 
               <div className="flex flex-col">
-                <label
-                  htmlFor="aadhar"
-                  className="font-semibold text-blue-900"
-                >
-                  Aadhar Card No.{" "}
-                  <span className="text-red-500">*</span>
+                <label htmlFor="aadhar" className="font-semibold text-blue-900">
+                  Aadhar Card No. <span className="text-red-500">*</span>
                 </label>
                 <input
                   type="text"
                   id="aadhar"
                   placeholder="Enter Aadhar No."
-                  className="border border-blue-500 h-10 outline-none rounded-md px-3 max-w-[85%] placeholder-text"
+                  className="border border-blue-500 h-12 outline-none rounded-md px-3 max-w-[85%] placeholder-text"
                 />
               </div>
             </div>
@@ -385,4 +385,4 @@ const BookAmbulance = () => {
   );
 };
 
-export default BookAmbulance;
+export default BookAmbulance;
