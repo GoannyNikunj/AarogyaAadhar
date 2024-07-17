@@ -1,5 +1,6 @@
 import React from "react";
 import Slider from "react-slick";
+import "../css/style.css";
 import Img1 from "../assets/Images/TreatmentSpecialities/img1.png";
 import Img2 from "../assets/Images/TreatmentSpecialities/img2.png";
 import Img3 from "../assets/Images/TreatmentSpecialities/img3.png";
@@ -7,6 +8,8 @@ import Img4 from "../assets/Images/TreatmentSpecialities/img4.png";
 import Img5 from "../assets/Images/TreatmentSpecialities/img5.png";
 import Img6 from "../assets/Images/TreatmentSpecialities/img6.png";
 import Img7 from "../assets/Images/TreatmentSpecialities/img7.png";
+import { GrFormNext } from "react-icons/gr";
+import { GrFormPrevious } from "react-icons/gr";
 
 const CrowdFundingCategories = () => {
   const categories = [
@@ -20,24 +23,26 @@ const CrowdFundingCategories = () => {
   ];
 
   const CustomNextArrow = (props) => {
-    const { className, style, onClick } = props;
+    const { onClick } = props;
     return (
       <div
-        className={className}
-        style={{ ...style, display: "block", background: "", zIndex: 40, marginRight: "5px" }}
+        className="absolute  right-[-25px] top-1/2 transform -translate-y-1/2 cursor-pointer z-30"
         onClick={onClick}
-      />
+      >
+         <GrFormNext  className="h-6 w-6 text-blue-900"/>
+      </div>
     );
   };
 
   const CustomPrevArrow = (props) => {
-    const { className, style, onClick } = props;
+    const { onClick } = props;
     return (
       <div
-        className={className}
-        style={{ ...style, display: "block", background: "", zIndex: 40, marginLeft: "5px" }}
+        className="absolute  left-[-25px] top-1/2 transform -translate-y-1/2 cursor-pointer z-30"
         onClick={onClick}
-      />
+      >
+        <GrFormPrevious className="h-6 w-6 text-blue-900" />
+      </div>
     );
   };
 
@@ -78,19 +83,19 @@ const CrowdFundingCategories = () => {
   };
 
   return (
-    <div className="slider-container">
+    <div className="slider-container" style={{ width: "88%", margin: "0 auto" }}>
       <h1 className="heading mb-5 text-3xl font-bold text-blue-900">Crowdfunding Categories</h1>
-      <hr className="divider " style={{marginTop:20,marginBottom:50}}/>
+      <hr className="divider" style={{ marginTop: 20, marginBottom: 50 }} />
       <Slider {...settings}>
         {categories.map((category, index) => (
           <div key={index} className="card-container">
             <div className="card">
               <div className="image-container">
-              <img src={category.img} alt={category.name} className="card-image" />
+                <img src={category.img} alt={category.name} className="card-image" />
               </div>
-             <div className="text-container">
-             <div className="card-text">{category.name}</div>
-             </div>
+              <div className="text-container">
+                <div className="card-text">{category.name}</div>
+              </div>
             </div>
           </div>
         ))}

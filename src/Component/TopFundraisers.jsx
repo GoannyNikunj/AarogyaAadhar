@@ -11,12 +11,13 @@ import Img6 from "../assets/Images/TopFundraisers/Img6.jpeg";
 import Img7 from "../assets/Images/TopFundraisers/Img7.jpeg";
 import { FaFacebook } from "react-icons/fa";
 import { FaWhatsapp } from "react-icons/fa6";
+import { GrFormNext } from "react-icons/gr";
+import { GrFormPrevious } from "react-icons/gr";
 
 function TopFundraisers() {
   const TopFundraisers = [
     { img: Img1, detail: "Support My Daughter Masumi's Battle Against Osteosarcoma Cancer", by: "Aarogya Aadhar", price: " ₹ 32,000", percentage: "20" },
     { img: Img2, detail: "Bone Marrow Transplant has the Potential to save Neetu's Life", by: "by Karam Singh", price: " ₹ 32,000 ", percentage: "1" },
-    // { img: Img3, detail: "“Make A Donation To Improve My Newborn’s Health.” - Sagar", by: "Aarogya Aadhar", price: " ₹ 32,000 ", percentage: "50" },
     { img: Img4, detail: "Iffat Needs Your Support To Regain The Gift Of Sound.", by: "Aarogya Aadhar", price: " ₹ 32,000 ", percentage: "75" },
     { img: Img5, detail: "2 Y/O Shriraksha Is Battling Liver Failure And Kidney Injury.", by: "Aarogya Aadhar", price: " ₹ 32,000 ", percentage: "30" },
     { img: Img6, detail: "Help My Mother raise funds to Undergo Brain Surgery!", by: "Aarogya Aadhar", price: " ₹ 32,000 ", percentage: "45" },
@@ -24,32 +25,35 @@ function TopFundraisers() {
   ];
 
   const CustomNextArrow = (props) => {
-    const { className, style, onClick } = props;
+    const { onClick } = props;
     return (
       <div
-        className={className}
-        style={{ ...style, display: "block", background: "", zIndex: 40, marginRight: "5px" }}
+        className="absolute  right-[-25px] top-1/2 transform -translate-y-1/2 cursor-pointer z-30"
         onClick={onClick}
-      />
+      >
+         <GrFormNext  className="h-6 w-6 text-blue-900"/>
+      </div>
     );
   };
 
   const CustomPrevArrow = (props) => {
-    const { className, style, onClick } = props;
+    const { onClick } = props;
     return (
       <div
-        className={className}
-        style={{ ...style, display: "block", background: "", zIndex: 40, marginLeft: "5px" }}
+        className="absolute  left-[-25px] top-1/2 transform -translate-y-1/2 cursor-pointer z-30"
         onClick={onClick}
-      />
+      >
+        <GrFormPrevious className="h-6 w-6 text-blue-900" />
+      </div>
     );
   };
+
 
   const settings = {
     infinite: true,
     speed: 500,
     slidesToScroll: 1,
-    slidesToShow: 4,  // Change this value to 4
+    slidesToShow: 4,
     autoplay: true,
     autoplaySpeed: 2000,
     nextArrow: <CustomNextArrow />,
@@ -85,7 +89,7 @@ function TopFundraisers() {
     <div className="py-6">
       <h3 className="text-center text-blue-900 font-bold text-3xl">Our Top Fundraisers</h3>
       <hr className='divider' style={{ marginTop: 20 }}></hr>
-      <div className="slider-container px-8 py-6">
+      <div className="slider-container px-8 py-6" style={{ width: '88%', margin: '0 auto' }}>
         <Slider {...settings}>
           {TopFundraisers.map((item, i) => (
             <div className="px-2" key={i}>

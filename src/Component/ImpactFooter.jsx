@@ -110,7 +110,7 @@ const ImpactFooter = () => {
       
     </div>
     <div className=' mt-5 mx-10'>
-<div className=' sm:flex gap-4 ml-5 mr-5'>
+<div className=' sm:flex gap-4 ml-8 mr-8'>
     <img src={Aarogya_Aadhar_logo} alt="" className=' h-16 w-40'/>
 <p className=' text-blue-900'>Aarogya Aadhar is an online technology platform connecting donors and donees. We do not provide any financial return in any form whatsoever, including but not limited to financial securities (debt or equity), interest, dividend, profit share, rewards in cash, to individuals who make payments on the Platform.</p>
 </div>

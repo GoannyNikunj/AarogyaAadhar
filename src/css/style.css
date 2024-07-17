@@ -210,6 +210,28 @@ img {
   /* border-radius: 10px; */
 }
 
+/* Crowdfunding_slider */
+.custom-arrow {
+  display: block;
+  z-index: 40;
+  color: blue !important;
+  font-size: 20px;
+  background: none;
+  border: none;
+}
+
+.custom-arrow:hover {
+  color: darkblue !important;
+}
+
+.custom-next-arrow {
+  right: 5px;
+}
+
+.custom-prev-arrow {
+  left: 5px;
+}
+
 
 .outer-container {
   display: flex;
@@ -222,7 +244,7 @@ img {
 
 .middle-section {
   display: flex;
-  width: 80%;
+  width: 88%;
   height: auto;
   background-color: white;
   border-radius: 30px;
