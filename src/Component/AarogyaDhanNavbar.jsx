@@ -21,7 +21,7 @@ const AarogyaDhanNavbar = () => {
                     </div>
                 </div>
                 <div className="main-navbar" style={{padding:30}}>
-                    <ul className="flex space-x-8 ml-5 mr-5 items-center">
+                    <ul className="flex space-x-8  mr-5 items-center">
                         <li onClick={()=>navigate('/')}><img src={Aarogya_Aadhar_logo} alt="Logo" className='logo h-12  w-32 cursor-pointer'/></li>
                         <li><img src={Aarogya_Aadhar_logo} alt="Logo" className='logo h-12  w-32 ' /></li>
                         <li className="cursor-pointer text-blue-900">Start a Free Fundraiser</li>
