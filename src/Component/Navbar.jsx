@@ -190,8 +190,8 @@ const Navbar = () => {
   }, []);
 
   return (
-    <div className=" fixed top-0 w-full z-50">
-      <div className="flex justify-end bg-white py-1 px-8 space-x-2">
+    <div className=" fixed top-0 w-full z-50 bg-white">
+      <div className="flex justify-end bg-white py-1 px-7 space-x-2">
         <div className="text-black flex items-center">
           <p className=" font-semibold text-sm  text-blue-900">
             {" "}
@@ -213,10 +213,10 @@ const Navbar = () => {
 
         ))}
 
-        <button className=" text-[14px] lg:text-[11px] xl:text-sm font-medium  text-[#2e1065] pb-1">Help ?</button>
+        <button className=" text-[14px] lg:text-[11px] xl:text-[13px] font-medium  text-[#2e1065] pb-1">Help ?</button>
       </div>
 
-      <div className=" absolute top-[4px] left-8 ">
+      <div className=" absolute top-[4px] left-5 ">
         <img src={Aarogya_Aadhar_logo} alt="" className=" cursor-pointer" onClick={()=>navigate('/')}/>
       </div>
 
@@ -241,7 +241,7 @@ const Navbar = () => {
             <FaSearch  className=" text-gray-500"/>
             </div>
           </div>
-          <div className="flex gap-2 lg:gap-1 xl:gap-2 ml-4">
+          <div className="flex gap-2 lg:gap-1 xl:gap-2 ml-0">
   <button className="flex-grow inline-flex justify-center items-center h-8 border bg-blue-600 border-blue-700 shadow-lg rounded-md text-sm lg:text-12px xl:text-sm font-medium" onClick={()=>navigate('/bookappointment')}>
     <span className=" text-white flex justify-center items-center gap-2" > <span><FaCalendarAlt className=" h-4 w-4"/></span>  Book Free Appointment</span>
   </button>
@@ -268,7 +268,7 @@ const Navbar = () => {
       </div>
 
       {/* </div> */}
-      <div className="flex justify-center bg-white shadow-lg pt-1 space-x-2">
+      <div className="flex justify-evenly bg-white shadow-lg pt-1 space-x-2">
         {dropdownData.map((dropdown, index) => (
           <Dropdown
             key={index}

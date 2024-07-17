@@ -8,7 +8,7 @@ import { FaLinkedin } from "react-icons/fa";
 import { IoLogoYoutube } from "react-icons/io";
 const OurPolicies = () => {
   return (
-    <div className=" grid grid-cols-2 lg:grid-cols-5 xl:flex xl:justify-between py-2 pt-5 px-4 lg:px-10">
+    <div className=" grid grid-cols-2 lg:grid-cols-5 xl:flex xl:justify-between py-2 pt-5 px-4 lg:px-5">
      <div className=" lg:hidden flex flex-col">
         <h1 className="text-md  sm:text-2xl font-bold pb-2 text-blue-900">Our Services</h1>
         <p className="cursor-pointer text-[10px] sm:text-[11px] xl:text-[16px] text-blue-900">Features for Doctor</p>

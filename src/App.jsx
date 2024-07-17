@@ -6,7 +6,7 @@ import All_Routes from './AllRoutes/All_Routes'
 import EnquireButton from './Component/EnquireNow'
 import OurPolicies from './Component/OurPolicies'
 import MobileNavbar from './Component/MobileNavabr'
-import bgimage from './assets/Images/5.jpg'
+import bgimage from './assets/Images/Icon Background.jpg'
 import BottomTab from './Component/BottomTab'
 
 function App() {
