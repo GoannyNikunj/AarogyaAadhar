@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { IoClose } from "react-icons/io5";
-import connectwithlogo from '../assets/Images/Aarogya-Rakshak-logo1.png';
+import connectwithlogo from '../assets/Images/AAROGYA RAKSHAK 01.png';
 // import chatboot from '../assets/Images/Chatboot_img.png';
 
 const EnquireButton = () => {
@@ -36,7 +36,7 @@ const EnquireButton = () => {
         <div>
             {showButton && (
                 <>
-                <div className="fixed bg-[#1e3a8a] p-1 hidden lg:flex rounded-full top-44 right-5 z-40 h-28 w-28 object-contain cursor-pointer" onClick={handleButtonClick}>
+                <div className="fixed p-1 hidden lg:flex rounded-md top-44 h-[110px] w-[210px] right-0 z-40 object-contain cursor-pointer" onClick={handleButtonClick}>
                     <img src={connectwithlogo} alt="" className=''/>
                 </div>
                  {/* <div className="fixed  p-1 lg:hidden rounded-full top-44 right-5 z-40 h-28 w-28 object-contain cursor-pointer" onClick={handleButtonClick}>

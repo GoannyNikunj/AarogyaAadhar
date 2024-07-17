@@ -205,7 +205,7 @@ const MobileNavbar = () => {
 
   return (
     <div>
-      <div className="fixed top-0 w-full z-50">
+      <div className="fixed top-0 w-full z-50 bg-white">
         <div className="flex justify-between sm:pl-6 bg-white items-center py-1 px-1 sm:px-3">
           <img
             src={Aarogya_Aadhar_logo}
@@ -239,7 +239,7 @@ const MobileNavbar = () => {
             />
             <FaSearch className="text-blue-900 mx-2" />
           </div>
-          <button className="flex items-center justify-center border text-[11px] sm:text-[19px] font-semibold border-blue-700 text-blue-900 sm:px-2 rounded-full sm:w-44 w-full gap-1 sm:gap-2 h-8">
+          <button className="flex items-center justify-center border text-[10px] sm:text-[19px] font-semibold border-blue-700 text-blue-900 sm:px-2 rounded-full sm:w-44 w-full gap-1 sm:gap-2 h-8">
             Health Card <FaRegAddressCard className="h-3 w-3 sm:h-5 sm:w-5" />
           </button>
         </div>
