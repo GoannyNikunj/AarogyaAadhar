@@ -13,7 +13,7 @@ const AarogyaDhan = () => {
       <AarogyaDhanNavbar/>
       <Aarogyadhan_slider/>
 
-      <GiveEveryMonth/>
+      <GiveEveryMonth/> 
       <CrowdFundingCategories/>
       <HowCanCrowdFundingHelp/>
 
@@ -24,3 +24,7 @@ const AarogyaDhan = () => {
 }
 
 export default AarogyaDhan
+
+//Responsive Pending
+// 1 GiveEveryMonth
+// 2 HowCanCrowdFundingHelp
