@@ -146,10 +146,14 @@ const BedBooking = () => {
       <div className="flex xl:hidden fixed top-[83px] sm:top-[105px] bg-white">
         <ScrollingTagline />
       </div>
-      <div className="mt-[135px] xl:mt-36 pt-4 py-10 bg-opacity-80">
-        <h2 className="text-4xl font-bold text-center text-blue-900">
-          Bed Booking
-        </h2>
+      <div className="mt-[135px] xl:mt-36 pt-4 py-3">
+        <div className="grid grid-cols-12 gap-4 px-3">
+          <div className="col-span-12 md:col-span-8 md:col-start-4 xl:col-start-4">
+            <h2 className="text-4xl font-bold text-center text-blue-900">
+              Bed Booking
+            </h2>
+          </div>
+        </div>
         <hr className="my-4 mx-4" />
         <div className="grid md:grid-cols-12 gap-4 px-3">
           <div className="col-span-12 md:col-span-4 pt-3 flex flex-col justify-center items-center">
