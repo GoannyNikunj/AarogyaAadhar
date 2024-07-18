@@ -315,13 +315,13 @@ img {
 .slider-container {
   padding: 2rem 1rem;
   text-align: center;
-  margin-bottom: 100px;
+  margin-bottom: 20px;
 }
 .divider {
   width: 6%; /* Adjust the width as needed */
   margin: 0 auto 20px; /* Center the divider and add margin below it */
   border: 0;
-  height: 4px;
+  height: 6px;
   background: #1d4ed8; /* Adjust the color as needed */
 
 }
@@ -473,4 +473,92 @@ height: auto;
 
 .dot.active {
   background-color: #333;
+}
+
+/*What is CrowdFunding  */
+
+.container {
+  width: 70%;
+  margin: 0 auto; 
+}
+
+.outerdiv {
+  display: flex;
+}
+
+.partition {
+  flex: 1;
+  padding: 10px;
+  box-sizing: border-box;
+}
+.outerdiv .partition p {
+  text-align: left !important;
+}
+.left-text {
+  text-align: left;
+}
+
+/* How dOes Crowdfunding */
+
+.outerdiv2 {
+  width: 70%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin: 0 auto;
+}
+
+.partition2 {
+  width: 45%; /* Adjust as needed */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.left-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around; /* Ensure equal spacing between steps */
+}
+
+
+
+.step p:first-child, .step p:first-child, .step p:first-child {
+  font-size: 2em; /* Big size for 1, 2, 3 */
+  font-weight: bold;
+}
+
+.step p:nth-child(2), .step p:nth-child(2), .step p:nth-child(2) {
+  font-size: 1.5em; /* Little big size for subheadings */
+  font-weight: bold;
+}
+
+.step p:nth-child(3), .step p:nth-child(3), .step p:nth-child(3) {
+  font-size: 1.2em; /* Smaller size for detailed text */
+}
+
+video {
+  width: 50%;
+  max-width: 400px; /* Adjust as needed for smaller screen */
+  height: auto;
+  align-self: center; /* Center the video */
+  border-radius: 20px;
+}
+.video-hidden {
+  display: none;
+}
+
+.video-visible {
+  display: block; /* or inline-block, depending on your layout */
+}
+.step {
+  color: #ccc; /* Default color for inactive steps */
+}
+
+.step-active {
+  color: green; /* Color for active step */
+}
+
+.step-inactive {
+  color:gray; /* Color for inactive steps */
 }
