@@ -24,24 +24,35 @@ const BookAppointment = () => {
   const [aadhar, setAadhar] = useState("");
 
   const ExpertDoctor = [
-    "Select-Your-Service",
     "General Physician",
+    "Emergency Medicine",
+    "Internal Medicine",
+    "Occupational Medicine",
     "Chest Physician",
     "Pediatricians",
-    "Obstetrician / Gynecologists",
+    "Otorhinolaryngologist",
+    "Obstetrician and Gynecologists",
     "IVF Consultant",
-    "Otolaryngologists / ENT",
-    "Ophthalmologists / Eye Specialist",
+    "Oral & Maxillofacial Surgeon",
+    "Otolaryngologists/ENT",
+    "Vascular Surgeon",
+    "Ophthalmologists/Eye Specialist",
     "Cardiologists",
     "Nephrologists",
-    "General Surgeons",
+    "General Surgeon",
     "Proctologist",
-    "Orthopedics / Joint Replacement Surgeon",
+    "Orthopedics",
+    "Joint Replacement Surgeon",
     "Physiotherapist",
-    "Oncologists / Cancer",
+    "Oncologists/Cancer",
+    "Radiation Oncologist",
+    "Nuclear Medicine",
+    "Colorectal Surgeon",
     "Radiologists",
     "Urologists",
     "Dermatologists",
+    "Plastic Surgeon",
+    "Pathologist",
     "Neurologists",
     "Psychiatrists",
     "Dentist",
@@ -51,7 +62,7 @@ const BookAppointment = () => {
     "Geriatric Medicine",
     "Allergists",
     "Endocrinologists",
-    "Cardiac Surgeons",
+    "Cardiac Surgeon",
     "Rheumatologists",
     "Pulmonologists",
     "Anesthesiologists",
@@ -76,21 +87,69 @@ const BookAppointment = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Handle form submission with all state values including dob
-    console.log("Form submitted:", {
-      firstName,
-      middleName,
-      lastName,
-      dob: dob ? formatDate(dob) : "",
-      gender,
-      category,
-      mobile,
-      email,
-      otp,
-      city,
-      pinCode,
-      aadhar,
-    });
+
+    // Perform validations
+    let valid = true;
+
+    if (firstName.trim() === "") {
+      setFirstNameError("First Name is required");
+      valid = false;
+    } else {
+      setFirstNameError("");
+    }
+
+    if (middleName.trim() === "") {
+      setMiddleNameError("Middle Name is required");
+      valid = false;
+    } else {
+      setMiddleNameError("");
+    }
+
+    if (lastName.trim() === "") {
+      setLastNameError("Last Name is required");
+      valid = false;
+    } else {
+      setLastNameError("");
+    }
+
+    if (mobile.trim().length !== 10) {
+      setMobileError("Mobile number must be 10 digits");
+      valid = false;
+    } else {
+      setMobileError("");
+    }
+
+    if (pinCode.trim().length !== 6) {
+      setPinCodeError("Pin code must be 6 digits");
+      valid = false;
+    } else {
+      setPinCodeError("");
+    }
+
+    if (aadhar.trim().length !== 12) {
+      setAadharError("Aadhar number must be 12 digits");
+      valid = false;
+    } else {
+      setAadharError("");
+    }
+
+    if (valid) {
+      // Handle form submission with all state values including dob
+      console.log("Form submitted:", {
+        firstName,
+        middleName,
+        lastName,
+        dob: dob ? formatDate(dob) : "",
+        gender,
+        category,
+        mobile,
+        email,
+        otp,
+        city,
+        pinCode,
+        aadhar,
+      });
+    }
   };
 
   const formatDate = (date) => {
@@ -148,15 +207,15 @@ const BookAppointment = () => {
         <ScrollingTagline />
       </div>
       <div className="mt-[135px] xl:mt-[145px] pt-3 py-3">
-        <h2 className="text-4xl font-bold text-center mx-2 py-2 text-blue-900">
-          Book Free Appointment
-        </h2>
-        <hr className="mt-[1px] mx-4" />
         <div className="grid md:grid-cols-12 gap-3 py-4 px-3">
-          <div className="col-span-12 md:col-span-4 w-full pt- flex flex-col justify-center items-center">
+          <div className="hidden md:block col-span-12 md:col-span-4 w-full pt- flex flex-col justify-center items-center">
             <img src={Book_Free_Appointment} alt="Book Free Appointment" />
           </div>
           <div className="col-span-12 md:col-span-8">
+            <h2 className="text-4xl font-bold text-center mx-2 py-2 text-blue-900 justify-self-end">
+              Book Free Appointment
+            </h2>
+            <hr className="mt-[1px] mx-4" />
             <form onSubmit={handleSubmit}>
               <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-2">
                 <div className="flex flex-col">
@@ -324,7 +383,8 @@ const BookAppointment = () => {
                     htmlFor="email"
                     className="font-semibold text-blue-900"
                   >
-                    Email
+                    Email ID
+                    <span className="text-red-500">*</span>
                   </label>
                   <input
                     type="email"
@@ -335,23 +395,29 @@ const BookAppointment = () => {
                     className="border border-blue-500 h-10 outline-none rounded-md px-3 max-w-[85%] placeholder-text"
                   />
                 </div>
-                <div className="flex flex-col">
-                  <label htmlFor="otp" className="font-semibold text-blue-900">
-                    OTP <span className="text-red-500">*</span>
+                <div className="flex flex-col relative">
+                  <label
+                    htmlFor="patient-otp"
+                    className="font-semibold text-blue-900"
+                  >
+                    Enter OTP <span className="text-red-500">*</span>
                   </label>
-                  <input
-                    type="text"
-                    id="otp"
-                    value={otp}
-                    onChange={(e) => setOtp(e.target.value)}
-                    placeholder="Enter OTP"
-                    className="border border-blue-500 h-10 outline-none rounded-md px-3 max-w-[85%] placeholder-text"
-                    required
-                  />
+                  <div className="relative border border-blue-500 rounded-md px-3 max-w-[85%]">
+                    <input
+                      type="text"
+                      id="patient-otp"
+                      placeholder="Enter OTP"
+                      className="h-12 outline-none rounded-md placeholder-text flex-grow"
+                    />
+                    <button className="absolute inset-y-0 right-0 bg-blue-900 text-white rounded-md px-3">
+                      Get OTP
+                    </button>
+                  </div>
                 </div>
                 <div className="flex flex-col">
                   <label htmlFor="city" className="font-semibold text-blue-900">
                     City
+                    <span className="text-red-500">*</span>
                   </label>
                   <input
                     type="text"
@@ -360,6 +426,7 @@ const BookAppointment = () => {
                     onChange={(e) => setCity(e.target.value)}
                     placeholder="Enter City"
                     className="border border-blue-500 h-10 outline-none rounded-md px-3 max-w-[85%] placeholder-text"
+                    required
                   />
                 </div>
                 <div className="flex flex-col">
@@ -403,7 +470,7 @@ const BookAppointment = () => {
                   )}
                 </div>
               </div>
-              <div className="flex justify-center items-center mt-4">
+              <div className="flex justify-end mt-10">
                 <button
                   type="submit"
                   className="bg-blue-700 text-white font-semibold rounded-md py-2 px-4"
@@ -412,6 +479,9 @@ const BookAppointment = () => {
                 </button>
               </div>
             </form>
+          </div>
+          <div className="block md:hidden col-span-12 md:col-span-4 w-full pt- flex flex-col justify-center items-center">
+            <img src={Book_Free_Appointment} alt="Book Free Appointment" />
           </div>
         </div>
       </div>

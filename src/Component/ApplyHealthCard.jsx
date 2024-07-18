@@ -20,7 +20,7 @@ const ApplyHealthCard = () => {
       </div>
       <div className="mt-[135px] xl:mt-36 pt-4 py-3m px-2 sm:px-4 md:mb-20">
         <h2 className="text-2xl md:text-4xl font-bold text-center text-blue-900">
-          Aarogya Aadhar Member Registration Detail
+        Aarogya Aadhar Member Registration 
         </h2>
         <hr className="my-4 mx-4" />
         <div className="col-span-12 md:col-span-8">
@@ -101,7 +101,7 @@ const ApplyHealthCard = () => {
               </label>
               <input
                 type="text"
-                placeholder="Enter Mobile No."
+                placeholder="Enter Mobile Number"
                 className="border border-blue-500 h-10 outline-none rounded-md px-3 max-w-[70%]"
               />
             </div>
