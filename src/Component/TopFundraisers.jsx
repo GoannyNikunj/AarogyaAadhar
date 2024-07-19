@@ -87,7 +87,7 @@ function TopFundraisers() {
 
   return (
     <div className="py-6">
-      <h3 className="text-center text-blue-900 font-bold text-3xl">Our Top Fundraisers</h3>
+      <h3 className="text-center lg:mb-2 text-xl sm:text-2xl md:text-3xl font-bold text-blue-900">Our Top Fundraisers</h3>
       <hr className='divider' style={{ marginTop: 20 }}></hr>
       <div className="slider-container px-5 sm:px-10 lg:px-16 py-6" >
         <Slider {...settings}>
@@ -100,7 +100,7 @@ function TopFundraisers() {
                   </div>
                   <p className="font-semibold line-clamp-2">{item.detail}</p>
                   <p className="text-center">{item.by}</p>
-                  <div className="flex gap-2 justify-center items-center">
+                  <div className="flex gap-2 justify-center my-2 items-center">
                     <button className="flex justify-center items-center gap-2 bg-blue-900 text-white px-3 rounded-md"><FaWhatsapp />Share</button>
                     <button className="flex justify-center items-center gap-2 bg-blue-900 text-white px-3 rounded-md"><FaFacebook />Share</button>
                   </div>

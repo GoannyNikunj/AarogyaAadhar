@@ -14,10 +14,11 @@ import ScrollingTagline from "../../Component/ScrollingTagline";
 import OurPolicies from "../../Component/OurPolicies";
 import Footer from "../../Component/Footer";
 import Img7 from "../../assets/Images/NewSilder/Hospitals.jpg";
+import bgimage from '../../assets/Images/HomePage Background.jpeg'
 
 const Home = () => {
   return (
-    <div className="overflow-x-hidden">
+    <div className="overflow-x-hidden" style={{ backgroundImage: `url(${bgimage})`, height: '100%', width: '100%', backgroundSize: 'cover', backgroundRepeat: 'repeat', backgroundAttachment: 'fixed' }}>
       <div className="lg:hidden">
         <MobileNavbar />
       </div>
