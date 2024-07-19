@@ -6,6 +6,10 @@ import Navbar from "./Navbar";
 import OurPolicies from "./OurPolicies";
 import Footer from "./Footer";
 import ScrollingTagline from "./ScrollingTagline";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";;
+import { FaCalendarAlt } from "react-icons/fa"
+
 
 const BookAmbulance = () => {
   const fileInputRef = useRef(null);
@@ -13,6 +17,17 @@ const BookAmbulance = () => {
   const [selectedAmbulanceType, setSelectedAmbulanceType] = useState("");
   const [selectedHospital, setSelectedHospital] = useState("");
   const [errors, setErrors] = useState({});
+  const [startDate, setStartDate] = useState(null); // Initialize with null or default date
+  const datePickerRef = useRef(null); 
+
+  const handleDatePickerClick = () => {
+    if (datePickerRef.current) {
+      datePickerRef.current.setFocus(); // Focus the DatePicker input
+    }
+  };
+
+
+  
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -55,6 +70,9 @@ const BookAmbulance = () => {
     }
     if (!selectedHospital) {
       formErrors.selectedHospital = "Please select a hospital";
+    }
+    if (!dateOfBirth) {
+      formErrors.dateOfBirth = "Please select your date of birth";
     }
     setErrors(formErrors);
 
@@ -194,7 +212,7 @@ const BookAmbulance = () => {
                       placeholder="Enter OTP"
                       className={`h-12 outline-none rounded-md placeholder-text flex-grow ${errors.patientOtp && "border-red-500"}`}
                     />
-                    <button className="absolute inset-y-0 right-0 bg-blue-900 text-white rounded-md px-3">
+                    <button className="absolute inset-y-0 right-0 bg-blue-900 text-white rounded-md px-2">
                       Get OTP
                     </button>
                   </div>
@@ -277,26 +295,58 @@ const BookAmbulance = () => {
                   <label htmlFor="dob" className="font-semibold text-blue-900">
                     Date of Birth <span className="text-red-500">*</span>
                   </label>
-                  <input
-                    type="date"
-                    id="dob"
-                    className="border border-blue-500 h-12 outline-none rounded-md px-3 max-w-[85%] placeholder-text"
-                  />
+                  
+                  <div className="relative border border-blue-500 rounded-md px-3 max-w-[85%] b">
+                    <DatePicker
+                      id="dob"
+                      selected={startDate}
+                      onChange={(date) => setStartDate(date)}
+                      dateFormat="dd/MM/yyyy"
+                      placeholderText="DD/MM/YYYY" // Placeholder text added here
+                      ref={datePickerRef}
+                      onClick={handleDatePickerClick}
+                      className="h-12 w-full outline-none placeholder-text"
+                    />
+                  
+                    <FaCalendarAlt className="absolute top-3 right-3 text-blue-500 pointer-events-none" />
+                  </div>
+
+                  {errors.dateOfBirth && (
+                    <p className="text-red-500">{errors.dateOfBirth}</p>
+                  )}
                 </div>
 
                 <div className="flex flex-col">
                   <label htmlFor="gender" className="font-semibold text-blue-900">
                     Gender <span className="text-red-500">*</span>
                   </label>
+                  <div className="relative max-w-[85%]">
                   <select
                     id="gender"
-                    className="border border-blue-500 h-12 outline-none rounded-md px-3 max-w-[85%] placeholder-text"
+                      className="border border-blue-500 h-10 outline-none rounded-md pr-10 pl-3 appearance-none  w-full"
                   >
                     <option value="">Select Gender</option>
                     <option value="male">Male</option>
                     <option value="female">Female</option>
                     <option value="transgender">Transgender</option>
                   </select>
+                  <div className="absolute inset-y-0 right-3 flex items-center pointer-events-none">
+                      <svg
+                        className="w-4 h-4 text-gray-700"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth="2"
+                          d="M19 9l-7 7-7-7"
+                        ></path>
+                      </svg>
+                    </div>
+                  </div>
                 </div>
 
                 <div className="flex flex-col relative">
@@ -378,10 +428,11 @@ const BookAmbulance = () => {
                     Select Ambulance{" "}
                     <span className="text-red-500">*</span>
                   </label>
+                  <div className="relative max-w-[85%]">
                   <select
                     id="select-ambulance"
                     name="selectedAmbulance"
-                    className={`border border-blue-500 h-12 outline-none rounded-md px-3 max-w-[85%] placeholder-text ${errors.selectedAmbulance && "border-red-500"}`}
+                    className={`border border-blue-500 h-10 outline-none rounded-md pr-10 pl-3 appearance-none  w-full ${errors.selectedAmbulance && "border-red-500"}`}
                     value={selectedAmbulance}
                     onChange={(e) => setSelectedAmbulance(e.target.value)}
                   >
@@ -393,6 +444,23 @@ const BookAmbulance = () => {
                   {errors.selectedAmbulance && (
                     <p className="text-red-500">{errors.selectedAmbulance}</p>
                   )}
+                 <div className="absolute inset-y-0 right-3 flex items-center pointer-events-none">
+                      <svg
+                        className="w-4 h-4 text-gray-700"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth="2"
+                          d="M19 9l-7 7-7-7"
+                        ></path>
+                      </svg>
+                    </div>
+                  </div>
                 </div>
 
                 <div className="flex flex-col">
@@ -403,10 +471,11 @@ const BookAmbulance = () => {
                     Ambulance Type{" "}
                     <span className="text-red-500">*</span>
                   </label>
+                  <div className="relative max-w-[85%]">
                   <select
                     id="ambulance-type"
                     name="selectedAmbulanceType"
-                    className={`border border-blue-500 h-12 outline-none rounded-md px-3 max-w-[85%] placeholder-text ${errors.selectedAmbulanceType && "border-red-500"}`}
+                    className={`border border-blue-500 h-10 outline-none rounded-md pr-10 pl-3 appearance-none w-full ${errors.selectedAmbulanceType && "border-red-500"}`}
                     value={selectedAmbulanceType}
                     onChange={(e) => setSelectedAmbulanceType(e.target.value)}
                   >
@@ -414,10 +483,28 @@ const BookAmbulance = () => {
                     <option value="basic">Basic Ambulance</option>
                     <option value="o2">O2 Ambulance</option>
                     <option value="cardiac">Cardiac Ambulance</option>
-                  </select>
+                 
                   {errors.selectedAmbulanceType && (
                     <p className="text-red-500">{errors.selectedAmbulanceType}</p>
                   )}
+                </select>
+               <div className="absolute inset-y-0 right-3 flex items-center pointer-events-none">
+                      <svg
+                        className="w-4 h-4 text-gray-700"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth="2"
+                          d="M19 9l-7 7-7-7"
+                        ></path>
+                      </svg>
+                    </div>
+                  </div>
                 </div>
 
                 <div className="flex flex-col">
@@ -427,20 +514,39 @@ const BookAmbulance = () => {
                   >
                     Hospital <span className="text-red-500">*</span>
                   </label>
+                  <div className="relative max-w-[85%]">
                   <select
                     id="hospital"
                     name="selectedHospital"
-                    className={`border border-blue-500 h-12 outline-none rounded-md px-3 max-w-[85%] placeholder-text ${errors.selectedHospital && "border-red-500"}`}
+                    className={`border border-blue-500 h-10 outline-none rounded-md pr-10 pl-3 appearance-none  w-full ${errors.selectedHospital && "border-red-500"}`}
                     value={selectedHospital}
                     onChange={(e) => setSelectedHospital(e.target.value)}
                   >
                     <option value="">Select Hospital</option>
                     <option value="private">Private Hospital</option>
                     <option value="government">Government Hospital</option>
-                  </select>
+                  
                   {errors.selectedHospital && (
                     <p className="text-red-500">{errors.selectedHospital}</p>
                   )}
+                  </select>
+                  <div className="absolute inset-y-0 right-3 flex items-center pointer-events-none">
+                      <svg
+                        className="w-4 h-4 text-gray-700"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth="2"
+                          d="M19 9l-7 7-7-7"
+                        ></path>
+                      </svg>
+                    </div>
+                  </div>
                 </div>
 
                 <div className="flex flex-col">

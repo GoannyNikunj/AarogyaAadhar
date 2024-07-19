@@ -89,7 +89,7 @@ function TopFundraisers() {
     <div className="py-6">
       <h3 className="text-center text-blue-900 font-bold text-3xl">Our Top Fundraisers</h3>
       <hr className='divider' style={{ marginTop: 20 }}></hr>
-      <div className="slider-container px-8 py-6" style={{ width: '88%', margin: '0 auto' }}>
+      <div className="slider-container px-5 sm:px-10 lg:px-16 py-6" >
         <Slider {...settings}>
           {TopFundraisers.map((item, i) => (
             <div className="px-2" key={i}>
