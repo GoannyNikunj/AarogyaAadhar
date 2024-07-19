@@ -183,7 +183,7 @@ const BookAmbulance = () => {
                     htmlFor="patient-mobile-no"
                     className="font-semibold text-blue-900"
                   >
-                    Mobile No. <span className="text-red-500">*</span>
+                    Mobile Number <span className="text-red-500">*</span>
                   </label>
                   <input
                     type="text"
@@ -320,17 +320,18 @@ const BookAmbulance = () => {
                   <label htmlFor="gender" className="font-semibold text-blue-900">
                     Gender <span className="text-red-500">*</span>
                   </label>
-                  <div className="relative max-w-[85%]">
+                 
                   <select
                     id="gender"
-                      className="border border-blue-500 h-10 outline-none rounded-md pr-10 pl-3 appearance-none  w-full"
+                      className="border border-blue-500 h-12 outline-none rounded-md px-3 max-w-[85%] placeholder-text"
                   >
                     <option value="">Select Gender</option>
                     <option value="male">Male</option>
                     <option value="female">Female</option>
                     <option value="transgender">Transgender</option>
                   </select>
-                  <div className="absolute inset-y-0 right-3 flex items-center pointer-events-none">
+                  </div>
+                  {/* <div className="absolute inset-y-0 right-3 flex items-center pointer-events-none">
                       <svg
                         className="w-4 h-4 text-gray-700"
                         fill="none"
@@ -346,15 +347,15 @@ const BookAmbulance = () => {
                         ></path>
                       </svg>
                     </div>
-                  </div>
-                </div>
+                  </div> */}
+               
 
                 <div className="flex flex-col relative">
                   <label
                     htmlFor="patient-mobile-no"
                     className="font-semibold text-blue-900"
                   >
-                    Mobile No{" "}
+                    Mobile Number{" "}
                     <span className="text-red-500">*</span>
                   </label>
                   <input
@@ -428,11 +429,11 @@ const BookAmbulance = () => {
                     Select Ambulance{" "}
                     <span className="text-red-500">*</span>
                   </label>
-                  <div className="relative max-w-[85%]">
+                  
                   <select
                     id="select-ambulance"
                     name="selectedAmbulance"
-                    className={`border border-blue-500 h-10 outline-none rounded-md pr-10 pl-3 appearance-none  w-full ${errors.selectedAmbulance && "border-red-500"}`}
+                    className={`border border-blue-500 h-12 outline-none rounded-md px-3 max-w-[85%] placeholder-text ${errors.selectedAmbulance && "border-red-500"}`}
                     value={selectedAmbulance}
                     onChange={(e) => setSelectedAmbulance(e.target.value)}
                   >
@@ -444,7 +445,7 @@ const BookAmbulance = () => {
                   {errors.selectedAmbulance && (
                     <p className="text-red-500">{errors.selectedAmbulance}</p>
                   )}
-                 <div className="absolute inset-y-0 right-3 flex items-center pointer-events-none">
+                 {/* <div className="absolute inset-y-0 right-3 flex items-center pointer-events-none">
                       <svg
                         className="w-4 h-4 text-gray-700"
                         fill="none"
@@ -461,7 +462,8 @@ const BookAmbulance = () => {
                       </svg>
                     </div>
                   </div>
-                </div>
+                 */}
+                 </div>
 
                 <div className="flex flex-col">
                   <label
@@ -471,11 +473,11 @@ const BookAmbulance = () => {
                     Ambulance Type{" "}
                     <span className="text-red-500">*</span>
                   </label>
-                  <div className="relative max-w-[85%]">
+                  
                   <select
                     id="ambulance-type"
                     name="selectedAmbulanceType"
-                    className={`border border-blue-500 h-10 outline-none rounded-md pr-10 pl-3 appearance-none w-full ${errors.selectedAmbulanceType && "border-red-500"}`}
+                    className={`border border-blue-500 h-12 outline-none rounded-md px-3 max-w-[85%] placeholder-text ${errors.selectedAmbulanceType && "border-red-500"}`}
                     value={selectedAmbulanceType}
                     onChange={(e) => setSelectedAmbulanceType(e.target.value)}
                   >
@@ -488,7 +490,7 @@ const BookAmbulance = () => {
                     <p className="text-red-500">{errors.selectedAmbulanceType}</p>
                   )}
                 </select>
-               <div className="absolute inset-y-0 right-3 flex items-center pointer-events-none">
+               {/* <div className="absolute inset-y-0 right-3 flex items-center pointer-events-none">
                       <svg
                         className="w-4 h-4 text-gray-700"
                         fill="none"
@@ -504,8 +506,9 @@ const BookAmbulance = () => {
                         ></path>
                       </svg>
                     </div>
+                  </div> */}
                   </div>
-                </div>
+              
 
                 <div className="flex flex-col">
                   <label
@@ -514,11 +517,11 @@ const BookAmbulance = () => {
                   >
                     Hospital <span className="text-red-500">*</span>
                   </label>
-                  <div className="relative max-w-[85%]">
+                 
                   <select
                     id="hospital"
                     name="selectedHospital"
-                    className={`border border-blue-500 h-10 outline-none rounded-md pr-10 pl-3 appearance-none  w-full ${errors.selectedHospital && "border-red-500"}`}
+                    className={`border border-blue-500 h-12 outline-none rounded-md px-3 max-w-[85%] placeholder-text ${errors.selectedHospital && "border-red-500"}`}
                     value={selectedHospital}
                     onChange={(e) => setSelectedHospital(e.target.value)}
                   >
@@ -530,7 +533,7 @@ const BookAmbulance = () => {
                     <p className="text-red-500">{errors.selectedHospital}</p>
                   )}
                   </select>
-                  <div className="absolute inset-y-0 right-3 flex items-center pointer-events-none">
+                  {/* <div className="absolute inset-y-0 right-3 flex items-center pointer-events-none">
                       <svg
                         className="w-4 h-4 text-gray-700"
                         fill="none"
@@ -545,9 +548,9 @@ const BookAmbulance = () => {
                           d="M19 9l-7 7-7-7"
                         ></path>
                       </svg>
-                    </div>
+                    </div> */}
                   </div>
-                </div>
+              
 
                 <div className="flex flex-col">
                   <label
@@ -573,7 +576,7 @@ const BookAmbulance = () => {
                     htmlFor="aadhar"
                     className="font-semibold text-blue-900"
                   >
-                    Aadhar Card No.{" "}
+                    Aadhar Card Number{" "}
                     <span className="text-red-500">*</span>
                   </label>
                   <input
