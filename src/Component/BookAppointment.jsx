@@ -25,50 +25,50 @@ const BookAppointment = () => {
 
   const ExpertDoctor = [
     "General Physician",
-    "Emergency Medicine",
-    "Internal Medicine",
-    "Occupational Medicine",
-    "Chest Physician",
-    "Pediatricians",
-    "Otorhinolaryngologist",
-    "Obstetrician and Gynecologists",
-    "IVF Consultant",
-    "Oral & Maxillofacial Surgeon",
-    "Otolaryngologists/ENT",
-    "Vascular Surgeon",
-    "Ophthalmologists/Eye Specialist",
-    "Cardiologists",
-    "Nephrologists",
-    "General Surgeon",
-    "Proctologist",
-    "Orthopedics",
-    "Joint Replacement Surgeon",
-    "Physiotherapist",
-    "Oncologists/Cancer",
-    "Radiation Oncologist",
-    "Nuclear Medicine",
-    "Colorectal Surgeon",
-    "Radiologists",
-    "Urologists",
-    "Dermatologists",
-    "Plastic Surgeon",
-    "Pathologist",
-    "Neurologists",
-    "Psychiatrists",
-    "Dentist",
-    "Dietitian",
-    "Sexologist",
-    "Gastroenterologists",
-    "Geriatric Medicine",
-    "Allergists",
-    "Endocrinologists",
-    "Cardiac Surgeon",
-    "Rheumatologists",
-    "Pulmonologists",
-    "Anesthesiologists",
-    "Ayurvedic",
-    "Homeopathy",
-    "Chiropractor",
+      "Emergency Medicine",
+      "Internal Medicine",
+      "Occupational Medicine",
+      "Chest Physician",
+      "Pediatricians",
+      "Otorhinolaryngologist",
+      "Obstetrician and Gynecologists",
+      "IVF Consultant",
+      "Oral & Maxillofacial Surgeon",
+      "Otolaryngologists/ENT",
+      "Vascular Surgeon",
+      "Ophthalmologists/Eye Specialist",
+      "Cardiologists",
+      "Nephrologists",
+      "General Surgeon",
+      "Proctologist",
+      "Orthopedics",
+      "Joint Replacement Surgeon",
+      "Physiotherapist",
+      "Oncologists/Cancer",
+      "Radiation Oncologist",
+      "Nuclear Medicine",
+      "Colorectal Surgeon",
+      "Radiologists",
+      "Urologists",
+      "Dermatologists",
+      "Plastic Surgeon",
+      "Pathologist",
+      "Neurologists",
+      "Psychiatrists",
+      "Dentist",
+      "Dietitian",
+      "Sexologist",
+      "Gastroenterologists",
+      "Geriatric Medicine",
+      "Allergists",
+      "Endocrinologists",
+      "Cardiac Surgeon",
+      "Rheumatologists",
+      "Pulmonologists",
+      "Anesthesiologists",
+      "Ayurvedic",
+      "Homeopathy",
+      "Chiropractor"
   ];
 
   const [firstNameError, setFirstNameError] = useState("");
@@ -184,7 +184,7 @@ const BookAppointment = () => {
     if (categoryRef.current && !category) {
       categoryRef.current.scrollIntoView({
         behavior: "smooth",
-        block: "start",
+        block: "start"
       });
     }
   };
@@ -311,11 +311,12 @@ const BookAppointment = () => {
                   >
                     Gender <span className="text-red-500">*</span>
                   </label>
+                  <div className="relative max-w-[85%]">
                   <select
                     id="gender"
                     value={gender}
                     onChange={handleGenderChange}
-                    className="border border-blue-500 h-10 outline-none rounded-md px-3 max-w-[85%] placeholder-text"
+                    className="border border-blue-500 h-10 outline-none rounded-md pr-10 pl-3 appearance-none  w-full"
                     required
                   >
                     {!gender && (
@@ -329,6 +330,23 @@ const BookAppointment = () => {
                     <option value="Transgender">Transgender</option>
                     <option value="Other">Other</option>
                   </select>
+                  <div className="absolute inset-y-0 right-3 flex items-center pointer-events-none">
+                      <svg
+                        className="w-4 h-4 text-gray-700"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth="2"
+                          d="M19 9l-7 7-7-7"
+                        ></path>
+                      </svg>
+                    </div>
+                  </div>
                 </div>
                 <div className="flex flex-col">
                   <label
@@ -337,13 +355,14 @@ const BookAppointment = () => {
                   >
                     Category <span className="text-red-500">*</span>
                   </label>
+                  <div className="relative max-w-[85%]">
                   <select
                     id="category"
                     value={category}
                     onChange={handleCategoryChange}
                     onFocus={handleCategoryFocus}
                     ref={categoryRef}
-                    className="border border-blue-500 h-10 outline-none rounded-md px-3 max-w-[85%] placeholder-text"
+                     className="border border-blue-500 h-10 outline-none rounded-md pr-10 pl-3 appearance-none  w-full"
                     required
                   >
                     {!category && (
@@ -357,7 +376,26 @@ const BookAppointment = () => {
                       </option>
                     ))}
                   </select>
-                </div>
+                  <div className="absolute inset-y-0 right-3 flex items-center pointer-events-none">
+                      <svg
+                        className="w-4 h-4 text-gray-700"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth="2"
+                          d="M19 9l-7 7-7-7"
+                        ></path>
+                      </svg>
+                    </div>
+                  </div>
+                  </div>
+                
+               
                 <div className="flex flex-col">
                   <label
                     htmlFor="mobile"
@@ -396,24 +434,24 @@ const BookAppointment = () => {
                   />
                 </div>
                 <div className="flex flex-col relative">
-                  <label
-                    htmlFor="patient-otp"
-                    className="font-semibold text-blue-900"
-                  >
-                    Enter OTP <span className="text-red-500">*</span>
-                  </label>
-                  <div className="relative border border-blue-500 rounded-md px-3 max-w-[85%]">
-                    <input
-                      type="text"
-                      id="patient-otp"
-                      placeholder="Enter OTP"
-                      className="h-12 outline-none rounded-md placeholder-text flex-grow"
-                    />
-                    <button className="absolute inset-y-0 right-0 bg-blue-900 text-white rounded-md px-3">
-                      Get OTP
-                    </button>
-                  </div>
+                <label
+                  htmlFor="patient-otp"
+                  className="font-semibold text-blue-900"
+                >
+                  Enter OTP <span className="text-red-500">*</span>
+                </label>
+                <div className="relative border border-blue-500 rounded-md px-3 max-w-[85%]">
+                  <input
+                    type="text"
+                    id="patient-otp"
+                    placeholder="Enter OTP"
+                    className="h-12 outline-none rounded-md placeholder-text flex-grow"
+                  />
+                  <button className="absolute inset-y-0 right-0 bg-blue-900 text-white rounded-md px-3">
+                    Get OTP
+                  </button>
                 </div>
+              </div>
                 <div className="flex flex-col">
                   <label htmlFor="city" className="font-semibold text-blue-900">
                     City
@@ -494,3 +532,4 @@ const BookAppointment = () => {
 };
 
 export default BookAppointment;
+
