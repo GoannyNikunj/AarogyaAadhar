@@ -255,7 +255,7 @@ const ImpactFooter = () => {
 <p className=' text-[10px] sm:text-[13px] xl:text-[16px] text-blue-900'>Aarogya Aadhar is an online technology platform connecting donors and donees. We do not provide any financial return in any form whatsoever, including but not limited to financial securities (debt or equity), interest, dividend, profit share, rewards in cash, to individuals who make payments on the Platform.</p>
 </div>
 
-<div className=' sm:flex justify-center items-center pb-16 gap-2'>
+<div className=' sm:flex justify-center items-center pb-16 lg:pb-1 gap-2'>
 
 <div className=' grid grid-cols-4 lg:grid-cols-8 items-center bg-white my-2'>
     <img src={RapidSSL} alt="" className='h-12'/>

@@ -154,7 +154,7 @@ const AllDiseases = () => {
               value={selectedOption}
               placeholder={placeholder}
               readOnly
-              className="w-full h-full  px-2 rounded-full lg:rounded-md text-[14px] outline-none cursor-pointer"
+              className="w-full h-full  px-2 rounded-full lg:rounded-md text-[13px] outline-none cursor-pointer"
             />
             <FaAngleDown className="mr-2 text-gray-500" />
           </div>
@@ -180,7 +180,7 @@ const AllDiseases = () => {
             <input
               type="text"
               placeholder="Search Diseases"
-              className="outline-none w-full h-full rounded-full lg:rounded-md text-[15px]"
+              className="outline-none w-full h-full rounded-full lg:rounded-md text-[13px]"
             />
           </div>
 

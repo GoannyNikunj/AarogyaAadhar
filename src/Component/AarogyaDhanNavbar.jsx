@@ -59,7 +59,7 @@ const AarogyaDhanNavbar = () => {
             <div className="flex items-center gap-2">
               <button className="help-button hidden lg:flex ml-2 text-[10px] sm:text-[11px] w-auto md:text-[14px] xl:text-[16px] lg:text-[13px] font-semibold sm:font-bold bg-blue-900 text-white py-1 px-1 sm:py-2 sm:px-2 xl-px-3 rounded-md whitespace-nowrap">Help</button>
               <button className="help-button hidden lg:flex ml-2 text-[10px] sm:text-[11px] w-auto md:text-[14px] xl:text-[16px] lg0text-[14px] font-semibold sm:font-bold bg-blue-900 text-white py-1 px-1 sm:py-2 sm:px-2 xl:px-3 rounded-md whitespace-nowrap">Login</button>
-              <select className="bg-transparent py-1 px-2 text-[10px] sm:text-[11px] md:text-[14px] xl:text-[16px] lg:text-[14px] rounded">
+              <select className="bg-transparent py-1 px-2 text-[12px] sm:text-[14px] md:text-[14px] xl:text-[16px] lg:text-[14px] rounded">
                 <option value="INR text-blue-900">INR</option>
               </select>
               <IoMenu className="flex lg:hidden h-8 w-8 sm:ml-5 cursor-pointer" onClick={toggleMenu} />
