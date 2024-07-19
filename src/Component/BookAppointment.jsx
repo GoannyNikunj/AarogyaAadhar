@@ -208,11 +208,17 @@ const BookAppointment = () => {
       </div>
       <div className="mt-[135px] xl:mt-[145px] pt-3 py-3">
         <div className="grid md:grid-cols-12 gap-3 py-4 px-3">
-          <div className="hidden md:block col-span-12 md:col-span-4 w-full pt- flex flex-col justify-center items-center">
-            <img src={Book_Free_Appointment} alt="Book Free Appointment" />
-          </div>
+        {/* <div className="hidden md:block col-span-12 md:col-span-4 w-full pt- flex flex-col justify-center items-center hide-on-small">
+      <img src={Book_Free_Appointment} alt="Book Free Appointment" />
+    </div> */}
+    <div
+  className="hidden md:block col-span-12 md:col-span-4 w-full pt- flex flex-col justify-center items-center hide-on-small"
+  style={{ display: window.innerWidth <= 400 ? 'none' : 'flex' }}
+>
+  <img src={Book_Free_Appointment} alt="Book Free Appointment" />
+</div>
           <div className="col-span-12 md:col-span-8">
-            <h2 className="text-4xl font-bold text-center mx-2 py-2 text-blue-900 justify-self-end">
+            <h2 className="text-4xl font-bold text-center mx-2 py-2 text-blue-900 justify-self-end" style={{ display: window.innerWidth <= 400 ? 'none' : 'flex' }}>
               Book Free Appointment
             </h2>
             <hr className="mt-[1px] mx-4" />
@@ -440,14 +446,14 @@ const BookAppointment = () => {
                 >
                   Enter OTP <span className="text-red-500">*</span>
                 </label>
-                <div className="relative border border-blue-500 rounded-md px-3 max-w-[85%]">
+                <div className="flex flex-col relative">
                   <input
                     type="text"
                     id="patient-otp"
                     placeholder="Enter OTP"
-                    className="h-12 outline-none rounded-md placeholder-text flex-grow"
+                    className="border border-blue-500 h-10 outline-none rounded-md px-3 max-w-[85%] placeholder-text"
                   />
-                  <button className="absolute inset-y-0 right-0 bg-blue-900 text-white rounded-md px-3">
+                  <button className="absolute inset-y-0 right-11 bg-blue-900 text-white rounded-md px-3">
                     Get OTP
                   </button>
                 </div>
@@ -518,9 +524,10 @@ const BookAppointment = () => {
               </div>
             </form>
           </div>
-          <div className="block md:hidden col-span-12 md:col-span-4 w-full pt- flex flex-col justify-center items-center">
+          {/* <div className="block md:hidden col-span-12 md:col-span-4 w-full pt- flex flex-col justify-center items-center">
             <img src={Book_Free_Appointment} alt="Book Free Appointment" />
-          </div>
+          </div> */}
+          
         </div>
       </div>
       <div className="py-4">
