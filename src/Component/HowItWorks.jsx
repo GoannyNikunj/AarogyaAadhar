@@ -5,6 +5,8 @@ import HowItWorks_Navbar from '../Component/HowItWorks_Navbar';
 import HowItWorks_YouCanChoose from '../Component/HowItWorks_YouCanChoose';
 import RaiseFund from '../Component/RaiseFund';
 import HowItWorks_slider2 from '../Component/HowItWorks_slider2';
+import WhatsCrowdFunding from './WhatsCrowdFunding';
+import HowDoesCrowdfunding from './HowDoesCrowdfunding';
 const HowItWorks = () => {
     return (
         <div>
@@ -14,6 +16,8 @@ const HowItWorks = () => {
             <HowItWorks_YouCanChoose/>
             <RaiseFund/>
             <HowItWorks_slider2/>
+            <WhatsCrowdFunding/>
+            <HowDoesCrowdfunding/>
         </div>
     )
 }
