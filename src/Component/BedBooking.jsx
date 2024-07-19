@@ -66,7 +66,9 @@ const BedBooking = () => {
 
     // Validation checks
     if (!isCapitalized(hospitalName)) {
-      setHospitalNameError("Hospital name should start with a capital letter.");
+      setHospitalNameError(
+        "Hospital name should start with a capital letter."
+      );
     }
 
     if (pinCode.length !== 6) {
@@ -149,10 +151,10 @@ const BedBooking = () => {
       <div className="mt-[135px] xl:mt-36 pt-4 py-3">
         <div className="grid grid-cols-12 gap-4 px-3">
           <div className="col-span-12 md:col-span-8 md:col-start-4 xl:col-start-4">
-            <h2 className="text-4xl font-bold text-center text-blue-900">
-              Bed Booking
-            </h2>
-          </div>
+        <h2 className="text-4xl font-bold text-center text-blue-900">
+          Bed Booking
+        </h2>
+        </div>
         </div>
         <hr className="my-4 mx-4" />
         <div className="grid md:grid-cols-12 gap-4 px-3">
@@ -173,83 +175,140 @@ const BedBooking = () => {
                   >
                     Hospital Type <span className="text-red-500">*</span>
                   </label>
-                  <select
-                    id="hospital-type"
-                    className="border border-blue-500 h-10 outline-none rounded-md px-3 max-w-[85%]"
-                    required
-                    onFocus={handleHospitalTypeFocus}
-                    onBlur={handleHospitalTypeBlur}
-                    ref={hospitalTypeRef}
-                  >
-                    <option value="">
-                      {hospitalTypeFocused
-                        ? "Select-Hospital-Type"
-                        : "Select Hospital Type"}
-                    </option>
-                    <option value="government">Government Hospital</option>
-                    <option value="private">Private Hospital</option>
-                  </select>
+                  <div className="relative max-w-[85%]">
+                    <select
+                      id="hospital-type"
+                      className="border border-blue-500 h-10 outline-none rounded-md pr-10 pl-3 appearance-none  w-full"
+                      required
+                      onFocus={handleHospitalTypeFocus}
+                      onBlur={handleHospitalTypeBlur}
+                      ref={hospitalTypeRef}
+                    >
+                      <option value="">
+                        {hospitalTypeFocused
+                          ? "Select-Hospital-Type"
+                          : "Select Hospital Type"}
+                      </option>
+                      <option value="government">Government Hospital</option>
+                      <option value="private">Private Hospital</option>
+                    </select>
+                    <div className="absolute inset-y-0 right-3 flex items-center pointer-events-none">
+                      <svg
+                        className="w-4 h-4 text-gray-700"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth="2"
+                          d="M19 9l-7 7-7-7"
+                        ></path>
+                      </svg>
+                    </div>
+                  </div>
                 </div>
                 <div className="flex flex-col">
                   <label
                     htmlFor="hospital-bed"
                     className="font-semibold text-blue-900"
                   >
-                    Select Hospital Bed <span className="text-red-500">*</span>
+                    Select Hospital Bed{" "}
+                    <span className="text-red-500">*</span>
                   </label>
-                  <select
-                    id="hospital-bed"
-                    className="border border-blue-500 h-10 outline-none rounded-md px-3 max-w-[85%]"
-                    required
-                    onFocus={handleHospitalBedFocus}
-                    onBlur={handleHospitalBedBlur}
-                    ref={hospitalBedRef}
-                  >
-                    <option value="">
-                      {hospitalBedFocused
-                        ? "Select-Hospital-Bed"
-                        : "Select Hospital Bed"}
-                    </option>
-                    {HospitalBed.map((bed, index) => (
-                      <option key={index} value={bed} className="text-sm">
-                        {bed}
+                  <div className="relative max-w-[85%]">
+                    <select
+                      id="hospital-bed"
+                      className="border border-blue-500 h-10 outline-none rounded-md pr-10 pl-3 appearance-none  w-full"
+                      required
+                      onFocus={handleHospitalBedFocus}
+                      onBlur={handleHospitalBedBlur}
+                      ref={hospitalBedRef}
+                    >
+                      <option value="">
+                        {hospitalBedFocused
+                          ? "Select-Hospital-Bed"
+                          : "Select Hospital Bed"}
                       </option>
-                    ))}
-                  </select>
+                      {HospitalBed.map((bed, index) => (
+                        <option key={index} value={bed} className="text-sm">
+                          {bed}
+                        </option>
+                      ))}
+                    </select>
+                    <div className="absolute inset-y-0 right-3 flex items-center pointer-events-none">
+                      <svg
+                        className="w-4 h-4 text-gray-700"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth="2"
+                          d="M19 9l-7 7-7-7"
+                        ></path>
+                      </svg>
+                    </div>
+                  </div>
                 </div>
                 <div className="flex flex-col">
                   <label
                     htmlFor="advanced-search"
                     className="font-semibold text-blue-900"
                   >
-                    Advanced Search <span className="text-red-500">*</span>
+                    Advanced Search{" "}
+                    <span className="text-red-500">*</span>
                   </label>
-                  <select
-                    id="advanced-search"
-                    className="border border-blue-500 h-10 outline-none rounded-md px-3 max-w-[85%]"
-                    required
-                    onFocus={handleAdvancedSearchFocus}
-                    onBlur={handleAdvancedSearchBlur}
-                    ref={advancedSearchRef}
-                  >
-                    <option value="">
-                      {advancedSearchFocused
-                        ? "Select-Hospital"
-                        : "Select Hospital"}
-                    </option>
-                    {Hospitals.map((hospital, index) => (
-                      <option key={index} value={hospital} className="text-sm">
-                        {hospital}
+                  <div className="relative max-w-[85%]">
+                    <select
+                      id="advanced-search"
+                      className="border border-blue-500 h-10 outline-none rounded-md pr-10 pl-3 appearance-none  w-full"
+                      required
+                      onFocus={handleAdvancedSearchFocus}
+                      onBlur={handleAdvancedSearchBlur}
+                      ref={advancedSearchRef}
+                    >
+                      <option value="">
+                        {advancedSearchFocused
+                          ? "Select-Hospital"
+                          : "Select Hospital"}
                       </option>
-                    ))}
-                  </select>
+                      {Hospitals.map((hospital, index) => (
+                        <option key={index} value={hospital} className="text-sm">
+                          {hospital}
+                        </option>
+                      ))}
+                    </select>
+                    <div className="absolute inset-y-0 right-3 flex items-center pointer-events-none">
+                      <svg
+                        className="w-4 h-4 text-gray-700"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth="2"
+                          d="M19 9l-7 7-7-7"
+                        ></path>
+                      </svg>
+                    </div>
+                  </div>
                 </div>
                 <div className="flex flex-col">
                   <label
                     htmlFor="hospital-name"
                     className="font-semibold text-blue-900"
                   >
-                    Hospital Name <span className="text-red-500">*</span>
+                    Hospital Name{" "}
+                    <span className="text-red-500">*</span>
                   </label>
                   <input
                     type="text"
