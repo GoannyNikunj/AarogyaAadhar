@@ -20,7 +20,7 @@ const ApplyHealthCard = () => {
       </div>
       <div className="mt-[135px] xl:mt-36 pt-4 py-3m px-2 sm:px-4 md:mb-20">
         <h2 className="text-2xl md:text-4xl font-bold text-center text-blue-900">
-        Aarogya Aadhar Member Registration 
+          Aarogya Aadhar Member Registration 
         </h2>
         <hr className="my-4 mx-4" />
         <div className="col-span-12 md:col-span-8">
@@ -63,17 +63,36 @@ const ApplyHealthCard = () => {
               <label htmlFor="" className="font-semibold text-blue-900">
                 Gender <span className="text-red-500">*</span>
               </label>
-              <select
-                name=""
-                id=""
-                className="border border-blue-500 h-10 outline-none rounded-md px-3 max-w-[70%]"
-              >
-                <option value="">Select Gender</option>
-                <option value="">Male</option>
-                <option value="">Female</option>
-                <option value="">Transgender</option>
-              </select>
+              <div className="relative max-w-[70%]">
+                <select
+                  name=""
+                  id=""
+                  className="border border-blue-500 h-10 outline-none rounded-md pr-10 pl-3 appearance-none  w-full"
+                >
+                  <option value="">Select Gender</option>
+                  <option value="">Male</option>
+                  <option value="">Female</option>
+                  <option value="">Transgender</option>
+                </select>
+                <div className="absolute inset-y-0 right-3 flex items-center pointer-events-none">
+                  <svg
+                    className="w-4 h-4 text-gray-700"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="M19 9l-7 7-7-7"
+                    ></path>
+                  </svg>
+                </div>
+              </div>
             </div>
+
             <div className="flex flex-col">
               <label htmlFor="" className="font-semibold text-blue-900">
                 City <span className="text-red-500">*</span>
