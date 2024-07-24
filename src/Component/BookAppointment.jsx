@@ -429,7 +429,7 @@ const BookAppointment = () => {
                     id="email"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
-                    placeholder="Enter Email"
+                    placeholder="Enter Email ID"
                     className="border border-blue-500 h-10 outline-none rounded-md px-3 max-w-[85%] placeholder-text"
                   />
                 </div>
@@ -462,7 +462,7 @@ const BookAppointment = () => {
                     id="city"
                     value={city}
                     onChange={(e) => setCity(e.target.value)}
-                    placeholder="Enter City"
+                    placeholder="Enter City Name"
                     className="border border-blue-500 h-10 outline-none rounded-md px-3 max-w-[85%] placeholder-text"
                     required
                   />

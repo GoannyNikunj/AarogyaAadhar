@@ -159,7 +159,7 @@ const BookAmbulance = () => {
                   />
                 </div>
 
-                <div className="flex flex-col">
+                <div className="relative max-w-[85%]">
                   <label
                     htmlFor="pin-code"
                     className="font-semibold text-blue-900"
@@ -171,31 +171,33 @@ const BookAmbulance = () => {
                     id="pin-code"
                     name="patientPinCode"
                     placeholder="Enter Pin Code"
-                    className={`border border-blue-500 h-12 outline-none rounded-md px-3 max-w-[85%] placeholder-text ${errors.patientPinCode && "border-red-500"}`}
+                    className={`border border-blue-500 h-10 outline-none rounded-md pr-10 pl-3 appearance-none  w-full ${errors.patientPinCode && "border-red-500"}`}
                   />
                   {errors.patientPinCode && (
                     <p className="text-red-500">{errors.patientPinCode}</p>
                   )}
                 </div>
 
-                <div className="flex flex-col">
+                <div className="relative max-w-[85%]">
                   <label
                     htmlFor="patient-mobile-no"
                     className="font-semibold text-blue-900"
                   >
-                    Mobile No. <span className="text-red-500">*</span>
+                    Mobile Number{" "}
+                    <span className="text-red-500">*</span>
                   </label>
                   <input
                     type="text"
                     id="patient-mobile-no"
                     name="patientMobileNo"
                     placeholder="Enter Mobile Number"
-                    className={`border border-blue-500 h-12 outline-none rounded-md px-3 max-w-[85%] placeholder-text ${errors.patientMobileNo && "border-red-500"}`}
+                    className={`border border-blue-500 h-10 outline-none rounded-md pr-5 pl-2 appearance-none  w-full ${errors.patientMobileNo && "border-red-500"}`}
                   />
                   {errors.patientMobileNo && (
                     <p className="text-red-500">{errors.patientMobileNo}</p>
                   )}
                 </div>
+                
 
                 <div className="flex flex-col relative">
                   <label
@@ -204,13 +206,13 @@ const BookAmbulance = () => {
                   >
                     Enter OTP <span className="text-red-500">*</span>
                   </label>
-                  <div className="relative border border-blue-500 rounded-md px-3 max-w-[85%]">
+                  <div className="relative max-w-[85%]">
                     <input
                       type="text"
                       id="patient-otp"
                       name="patientOtp"
                       placeholder="Enter OTP"
-                      className={`h-12 outline-none rounded-md placeholder-text flex-grow ${errors.patientOtp && "border-red-500"}`}
+                      className={`border border-blue-500 h-10 outline-none rounded-md pr-10 pl-3 appearance-none  w-full ${errors.patientOtp && "border-red-500"}`}
                     />
                     <button className="absolute inset-y-0 right-0 bg-blue-900 text-white rounded-md px-2">
                       Get OTP
@@ -232,7 +234,7 @@ const BookAmbulance = () => {
 
             <div className="col-span-12 md:col-span-8">
               <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-1 xl:grid-cols-3 gap-2">
-                <div className="flex flex-col">
+                <div className="relative max-w-[85%]">
                   <label
                     htmlFor="first-name"
                     className="font-semibold text-blue-900"
@@ -245,14 +247,14 @@ const BookAmbulance = () => {
                     id="first-name"
                     name="firstName"
                     placeholder="Enter First Name"
-                    className={`border border-blue-500 h-12 outline-none rounded-md px-3 max-w-[85%] placeholder-text ${errors.firstName && "border-red-500"}`}
+                    className={`border border-blue-500 h-10 outline-none rounded-md pr-10 pl-3 appearance-none  w-full  ${errors.firstName && "border-red-500"}`}
                   />
                   {errors.firstName && (
                     <p className="text-red-500">{errors.firstName}</p>
                   )}
                 </div>
 
-                <div className="flex flex-col">
+                <div className="relative max-w-[85%]">
                   <label
                     htmlFor="middle-name"
                     className="font-semibold text-blue-900"
@@ -265,14 +267,14 @@ const BookAmbulance = () => {
                     id="middle-name"
                     name="middleName"
                     placeholder="Enter Middle Name"
-                    className={`border border-blue-500 h-12 outline-none rounded-md px-3 max-w-[85%] placeholder-text ${errors.middleName && "border-red-500"}`}
+                    className={`border border-blue-500 h-10 outline-none rounded-md pr-10 pl-3 appearance-none  w-full ${errors.middleName && "border-red-500"}`}
                   />
                   {errors.middleName && (
                     <p className="text-red-500">{errors.middleName}</p>
                   )}
                 </div>
 
-                <div className="flex flex-col">
+                <div className="relative max-w-[85%]">
                   <label
                     htmlFor="last-name"
                     className="font-semibold text-blue-900"
@@ -284,7 +286,7 @@ const BookAmbulance = () => {
                     id="last-name"
                     name="lastName"
                     placeholder="Enter Last Name"
-                    className={`border border-blue-500 h-12 outline-none rounded-md px-3 max-w-[85%] placeholder-text ${errors.lastName && "border-red-500"}`}
+                    className={`border border-blue-500 h-10 outline-none rounded-md pr-10 pl-3 appearance-none  w-full ${errors.lastName && "border-red-500"}`}
                   />
                   {errors.lastName && (
                     <p className="text-red-500">{errors.lastName}</p>
@@ -296,7 +298,7 @@ const BookAmbulance = () => {
                     Date of Birth <span className="text-red-500">*</span>
                   </label>
                   
-                  <div className="relative border border-blue-500 rounded-md px-3 max-w-[85%] b">
+                  <div className="relative max-w-[85%]">
                     <DatePicker
                       id="dob"
                       selected={startDate}
@@ -305,7 +307,7 @@ const BookAmbulance = () => {
                       placeholderText="DD/MM/YYYY" // Placeholder text added here
                       ref={datePickerRef}
                       onClick={handleDatePickerClick}
-                      className="h-12 w-full outline-none placeholder-text"
+                      className="border border-blue-500 h-10 outline-none rounded-md pr-10 pl-3 appearance-none  w-full"
                     />
                   
                     <FaCalendarAlt className="absolute top-3 right-3 text-blue-500 pointer-events-none" />
@@ -317,39 +319,40 @@ const BookAmbulance = () => {
                 </div>
 
                 <div className="flex flex-col">
-                  <label htmlFor="gender" className="font-semibold text-blue-900">
-                    Gender <span className="text-red-500">*</span>
-                  </label>
-                  <div className="relative max-w-[85%]">
+                <label htmlFor="" className="font-semibold text-blue-900">
+                  Gender <span className="text-red-500">*</span>
+                </label>
+                <div className="relative max-w-[85%]">
                   <select
-                    id="gender"
-                      className="border border-blue-500 h-10 outline-none rounded-md pr-10 pl-3 appearance-none  w-full"
+                    name=""
+                    id=""
+                    className="border border-blue-500 h-10 outline-none rounded-md pr-10 pl-3 appearance-none  w-full"
                   >
                     <option value="">Select Gender</option>
-                    <option value="male">Male</option>
-                    <option value="female">Female</option>
-                    <option value="transgender">Transgender</option>
+                    <option value="">Male</option>
+                    <option value="">Female</option>
+                    <option value="">Transgender</option>
                   </select>
                   <div className="absolute inset-y-0 right-3 flex items-center pointer-events-none">
-                      <svg
-                        className="w-4 h-4 text-gray-700"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth="2"
-                          d="M19 9l-7 7-7-7"
-                        ></path>
-                      </svg>
-                    </div>
+                    <svg
+                      className="w-4 h-4 text-gray-700"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth="2"
+                        d="M19 9l-7 7-7-7"
+                      ></path>
+                    </svg>
                   </div>
                 </div>
+              </div>
+                <div className="relative max-w-[85%]">
 
-                <div className="flex flex-col relative">
                   <label
                     htmlFor="patient-mobile-no"
                     className="font-semibold text-blue-900"
@@ -362,7 +365,7 @@ const BookAmbulance = () => {
                     id="patient-mobile-no"
                     name="patientMobileNo"
                     placeholder="Enter Mobile Number"
-                    className={`border border-blue-500 h-12 outline-none rounded-md px-3 max-w-[85%] placeholder-text ${errors.patientMobileNo && "border-red-500"}`}
+                    className={`border border-blue-500 h-10 outline-none rounded-md pr-10 pl-3 appearance-none  w-full ${errors.patientMobileNo && "border-red-500"}`}
                   />
                   {errors.patientMobileNo && (
                     <p className="text-red-500">{errors.patientMobileNo}</p>
@@ -377,13 +380,13 @@ const BookAmbulance = () => {
                     Email ID
                     <span className="text-red-500">*</span>
                   </label>
-                  <div className="relative border border-blue-500 rounded-md px-3 max-w-[85%]">
+                  <div className="relative max-w-[85%]">
                     <input
                       type="text"
                       id="patient-email"
                       name="patientEmail"
                       placeholder="Enter Email ID"
-                      className={`h-12 outline-none rounded-md placeholder-text flex-grow ${errors.patientEmail && "border-red-500"}`}
+                      className={`border border-blue-500 h-10 outline-none rounded-md pr-10 pl-3 appearance-none  w-full ${errors.patientEmail && "border-red-500"}`}
                     />
                     <button className="absolute inset-y-0 right-0 bg-blue-900 text-white rounded-md px-2">
                       Get OTP
@@ -402,13 +405,13 @@ const BookAmbulance = () => {
                     Enter Email OTP
                     <span className="text-red-500">*</span>
                   </label>
-                  <div className="relative border border-blue-500 rounded-md px-3 max-w-[85%]">
+                  <div className="relative max-w-[85%]">
                     <input
                       type="text"
                       id="patient-email-otp"
                       name="patientEmailOtp"
                       placeholder="Enter Email OTP"
-                      className={`h-12 outline-none rounded-md placeholder-text flex-grow ${errors.patientEmailOtp && "border-red-500"}`}
+                      className={`border border-blue-500 h-10 outline-none rounded-md pr-10 pl-3 appearance-none  w-full ${errors.patientEmailOtp && "border-red-500"}`}
                     />
                    
                     <button className="absolute inset-y-0 right-0 bg-blue-900 text-white rounded-md px-2">
@@ -419,137 +422,107 @@ const BookAmbulance = () => {
                       <p className="text-red-500">{errors.patientEmailOtp}</p>
                     )}
                 </div>
-
                 <div className="flex flex-col">
-                  <label
-                    htmlFor="select-ambulance"
-                    className="font-semibold text-blue-900"
-                  >
-                    Select Ambulance{" "}
-                    <span className="text-red-500">*</span>
-                  </label>
-                  <div className="relative max-w-[85%]">
+
+                <label htmlFor="" className="font-semibold text-blue-900">
+                Select Ambulance{" "} <span className="text-red-500">*</span>
+                </label>
+                <div className="relative max-w-[85%]">
                   <select
-                    id="select-ambulance"
-                    name="selectedAmbulance"
-                    className={`border border-blue-500 h-10 outline-none rounded-md pr-10 pl-3 appearance-none  w-full ${errors.selectedAmbulance && "border-red-500"}`}
-                    value={selectedAmbulance}
-                    onChange={(e) => setSelectedAmbulance(e.target.value)}
+                    name="select-ambulance"
+                    id="selectedAmbulance"
+                    className="border border-blue-500 h-10 outline-none rounded-md pr-10 pl-3 appearance-none  w-full"
+                    
                   >
                     <option value="">Select Ambulance</option>
-                    <option value="govt-108">Government 108</option>
-                    <option value="private">Private Ambulance</option>
-                    <option value="hospital">Hospital Ambulance</option>
-                  </select>
-                  {errors.selectedAmbulance && (
-                    <p className="text-red-500">{errors.selectedAmbulance}</p>
-                  )}
-                 <div className="absolute inset-y-0 right-3 flex items-center pointer-events-none">
-                      <svg
-                        className="w-4 h-4 text-gray-700"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth="2"
-                          d="M19 9l-7 7-7-7"
-                        ></path>
-                      </svg>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="flex flex-col">
-                  <label
-                    htmlFor="ambulance-type"
-                    className="font-semibold text-blue-900"
-                  >
-                    Ambulance Type{" "}
-                    <span className="text-red-500">*</span>
-                  </label>
-                  <div className="relative max-w-[85%]">
-                  <select
-                    id="ambulance-type"
-                    name="selectedAmbulanceType"
-                    className={`border border-blue-500 h-10 outline-none rounded-md pr-10 pl-3 appearance-none w-full ${errors.selectedAmbulanceType && "border-red-500"}`}
-                    value={selectedAmbulanceType}
-                    onChange={(e) => setSelectedAmbulanceType(e.target.value)}
-                  >
-                    <option value="">Select Ambulance Type</option>
-                    <option value="basic">Basic Ambulance</option>
-                    <option value="o2">O2 Ambulance</option>
-                    <option value="cardiac">Cardiac Ambulance</option>
-                 
-                  {errors.selectedAmbulanceType && (
-                    <p className="text-red-500">{errors.selectedAmbulanceType}</p>
-                  )}
-                </select>
-               <div className="absolute inset-y-0 right-3 flex items-center pointer-events-none">
-                      <svg
-                        className="w-4 h-4 text-gray-700"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth="2"
-                          d="M19 9l-7 7-7-7"
-                        ></path>
-                      </svg>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="flex flex-col">
-                  <label
-                    htmlFor="hospital"
-                    className="font-semibold text-blue-900"
-                  >
-                    Hospital <span className="text-red-500">*</span>
-                  </label>
-                  <div className="relative max-w-[85%]">
-                  <select
-                    id="hospital"
-                    name="selectedHospital"
-                    className={`border border-blue-500 h-10 outline-none rounded-md pr-10 pl-3 appearance-none  w-full ${errors.selectedHospital && "border-red-500"}`}
-                    value={selectedHospital}
-                    onChange={(e) => setSelectedHospital(e.target.value)}
-                  >
-                    <option value="">Select Hospital</option>
-                    <option value="private">Private Hospital</option>
-                    <option value="government">Government Hospital</option>
-                  
-                  {errors.selectedHospital && (
-                    <p className="text-red-500">{errors.selectedHospital}</p>
-                  )}
+                    <option value="">Government 108</option>
+                    <option value="">Private Ambulance</option>
+                    <option value="">Hospital Ambulance</option>
                   </select>
                   <div className="absolute inset-y-0 right-3 flex items-center pointer-events-none">
-                      <svg
-                        className="w-4 h-4 text-gray-700"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth="2"
-                          d="M19 9l-7 7-7-7"
-                        ></path>
-                      </svg>
-                    </div>
+                    <svg
+                      className="w-4 h-4 text-gray-700"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth="2"
+                        d="M19 9l-7 7-7-7"
+                      ></path>
+                    </svg>
                   </div>
                 </div>
-
+              </div>
                 <div className="flex flex-col">
+                <label htmlFor="" className="font-semibold text-blue-900">
+                Ambulance Type{" "}<span className="text-red-500">*</span>
+                </label>
+                <div className="relative max-w-[85%]">
+                  <select
+                    name="ambulance-type"
+                    id="selectedAmbulanceType"
+                    className="border border-blue-500 h-10 outline-none rounded-md pr-10 pl-3 appearance-none  w-full"
+                  >
+                    <option value="">Select Ambulance Type</option>
+                    <option value="">Basic Ambulance</option>
+                    <option value="">O2 Ambulance</option>
+                    <option value="">Cardiac Ambulance</option>
+                  </select>
+                  <div className="absolute inset-y-0 right-3 flex items-center pointer-events-none">
+                    <svg
+                      className="w-4 h-4 text-gray-700"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth="2"
+                        d="M19 9l-7 7-7-7"
+                      ></path>
+                    </svg>
+                  </div>
+                </div>
+              </div>
+                <div className="flex flex-col">
+                <label htmlFor="" className="font-semibold text-blue-900">
+                Hospital <span className="text-red-500">*</span>
+                </label>
+                <div className="relative max-w-[85%]">
+                  <select
+                    name="hospital"
+                    id="selectedHospital"
+                    className="border border-blue-500 h-10 outline-none rounded-md pr-10 pl-3 appearance-none  w-full"
+                  >
+                    <option value="">Select Hospital</option>
+                    <option value="">Private Hospital</option>
+                    <option value="">Government Hospital</option>
+                  </select>
+                  <div className="absolute inset-y-0 right-3 flex items-center pointer-events-none">
+                    <svg
+                      className="w-4 h-4 text-gray-700"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth="2"
+                        d="M19 9l-7 7-7-7"
+                      ></path>
+                    </svg>
+                  </div>
+                </div>
+              </div>
+                <div className="relative max-w-[85%]">
                   <label
                     htmlFor="city"
                     className="font-semibold text-blue-900"
@@ -561,14 +534,14 @@ const BookAmbulance = () => {
                     id="city"
                     name="city"
                     placeholder="Enter City Name"
-                    className={`border border-blue-500 h-12 outline-none rounded-md px-3 max-w-[85%] placeholder-text ${errors.city && "border-red-500"}`}
+                    className={`border border-blue-500 h-10 outline-none rounded-md pr-10 pl-3 appearance-none  w-full ${errors.city && "border-red-500"}`}
                   />
                   {errors.city && (
                     <p className="text-red-500">{errors.city}</p>
                   )}
                 </div>
 
-                <div className="flex flex-col">
+                <div className="relative max-w-[85%]">
                   <label
                     htmlFor="aadhar"
                     className="font-semibold text-blue-900"
@@ -581,7 +554,7 @@ const BookAmbulance = () => {
                     id="aadhar"
                     name="aadhar"
                     placeholder="Enter Aadhar Number"
-                    className={`border border-blue-500 h-12 outline-none rounded-md px-3 max-w-[85%] placeholder-text ${errors.aadhar && "border-red-500"}`}
+                    className={`border border-blue-500 h-10 outline-none rounded-md pr-10 pl-3 appearance-none  w-full  ${errors.aadhar && "border-red-500"}`}
                   />
                   {errors.aadhar && (
                     <p className="text-red-500">{errors.aadhar}</p>

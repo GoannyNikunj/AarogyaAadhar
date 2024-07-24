@@ -115,7 +115,7 @@ function ServicePartner() {
           <div key={i} className="px-2">
             <div className="hover:cursor-pointer px-2 rounded-lg border border-blue-200">
               <div className="flex justify-center items-center">
-                <img src={item.img} alt="" className="h-[170px] rounded-md" />
+                <img src={item.img} alt="" className="h-[220px] rounded-md" />
               </div>
             </div>
           </div>
