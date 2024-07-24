@@ -352,11 +352,12 @@ const BookAmbulance = () => {
                 </div>
               </div>
                 <div className="relative max-w-[85%]">
+
                   <label
                     htmlFor="patient-mobile-no"
                     className="font-semibold text-blue-900"
                   >
-                    Mobile Number{" "}
+                    Mobile No{" "}
                     <span className="text-red-500">*</span>
                   </label>
                   <input
@@ -422,6 +423,7 @@ const BookAmbulance = () => {
                     )}
                 </div>
                 <div className="flex flex-col">
+
                 <label htmlFor="" className="font-semibold text-blue-900">
                 Select Ambulance{" "} <span className="text-red-500">*</span>
                 </label>
@@ -544,7 +546,7 @@ const BookAmbulance = () => {
                     htmlFor="aadhar"
                     className="font-semibold text-blue-900"
                   >
-                    Aadhar Card Number{" "}
+                    Aadhar Card No.{" "}
                     <span className="text-red-500">*</span>
                   </label>
                   <input

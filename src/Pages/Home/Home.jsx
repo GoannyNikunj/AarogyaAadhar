@@ -12,12 +12,13 @@ import AllDiseases from "../../Component/AllDiseases";
 import ScrollingTagline from "../../Component/ScrollingTagline";
 import OurPolicies from "../../Component/OurPolicies";
 import Footer from "../../Component/Footer";
+
 import Healthcard from '../../assets/Images/NewSilder/Aarogy Aadhar01.jpg'
 import bgimage from '../../assets/Images/HomePage Background.jpeg'
 
 const Home = () => {
   return (
-    <div className="overflow-x-hidden" style={{ backgroundImage: `url(${bgimage})`, height: '100%', width: '100%', backgroundSize: 'cover', backgroundRepeat: 'repeat', backgroundAttachment: 'fixed' }}>
+    <div className="overflow-x-hidden">
       <div className="lg:hidden">
         <MobileNavbar />
       </div>

@@ -45,7 +45,7 @@ const HowItWorks_slider2 = () => {
   };
 
   return (
-    <div className="slider-container">
+    <div className="slider-container px-12">
       <div className="slides" style={{ transform: `translateX(-${currentSlide * 100}%)` }}>
         {slides.map((slide, index) => (
           <div key={index} className="slide">

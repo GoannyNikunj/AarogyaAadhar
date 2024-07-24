@@ -6,7 +6,7 @@ const HowItWorks_Navbar = () => {
         <>
             <div className="navbar-container ">
             <div className="top-banner-howitworks">
-                    <div className="flex space-x-2">
+                    <div className="flex space-x-2 py-2 px-4">
                     <img src={Aarogya_Aadhar_logo} alt="Logo" className='logo h-14 w-32 ' />
                     </div>
                 </div>
