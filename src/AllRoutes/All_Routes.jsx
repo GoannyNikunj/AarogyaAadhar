@@ -7,6 +7,7 @@ import BedBooking from '../Component/BedBooking'
 import BookAmbulance from '../Component/BookAmbulance'
 import ApplyHealthCard from '../Component/ApplyHealthCard'
 import HowItWorks from '../Component/HowItWorks'
+import TopFundraisers from '../Pages/TopFundraisers'
 
 const All_Routes = () => {
   return (  
@@ -20,6 +21,7 @@ const All_Routes = () => {
         <Route path='/apply-health-card' element={<ApplyHealthCard/>}/>
         <Route path="/aarogyadhan" element={<AarogyaDhan/>}/>
         <Route path='/howitwork' element={<HowItWorks/>}/>
+        <Route path='/topfundraisers' element={<TopFundraisers/>}/>
       </Routes>
     </div>
   )

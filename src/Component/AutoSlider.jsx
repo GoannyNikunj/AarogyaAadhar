@@ -2,16 +2,15 @@ import React from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-// import Img1 from '../assets/Images/NewSilder/img1.jpeg'
-import Img2 from '../assets/Images/NewSilder/Corporate Health.png'
-import Img3 from '../assets/Images/NewSilder/Diagnostic Centers.png'
-import Img4 from '../assets/Images/NewSilder/Health Insurance.png'
-import Img5 from '../assets/Images/NewSilder/Expert Doctors.png'
-import Img6 from '../assets/Images/NewSilder/Home Healthcare.png'
-import Img7 from '../assets/Images/NewSilder/Hospitals.png'
-import Img8 from '../assets/Images/NewSilder/Pathology.png'
-import Img9 from '../assets/Images/NewSilder/Pharmacy.png'
-import Img1 from '../assets/Images/NewSilder/Surgery Packages.png'
+import Img2 from '../assets/Images/NewSilder/Img1.jpeg'
+import Img3 from '../assets/Images/NewSilder/Img2.jpeg'
+import Img4 from '../assets/Images/NewSilder/Img3.jpeg'
+import Img5 from '../assets/Images/NewSilder/Img4.jpeg'
+import Img6 from '../assets/Images/NewSilder/Img5.jpeg'
+import Img7 from '../assets/Images/NewSilder/Img6.jpeg'
+import Img8 from '../assets/Images/NewSilder/Img7.jpeg'
+import Img9 from '../assets/Images/NewSilder/Img8.jpeg'
+// import Img1 from '../assets/Images/NewSilder/Img9.jpeg'
 
 function AutoSlider() {
   const CustomNextArrow = (props) => {
@@ -50,12 +49,12 @@ function AutoSlider() {
   return (
     <div className=" mx-1 sm:mx-0">
       <Slider {...settings}>
-        <div className="relative">
+        {/* <div className="relative">
           <img src={Img1} alt="" className="xl:h-[345px] w-full" />
           <button className="absolute underline underline-offset-2 bottom-1 right-1 sm:bottom-2 sm:right-2 bg-blue-500 opacity-90 text-white px-2 py-1 md:py-2 text-[10px] sm:text-sm rounded-md shadow-md">
             More Details
           </button>
-        </div>
+        </div> */}
         <div className="relative">
           <img src={Img2} alt="" className="xl:h-[345px] w-full" />
           <button className="absolute underline underline-offset-2 bottom-1 right-1 sm:bottom-2 sm:right-2 bg-blue-500 opacity-90 text-white px-2 py-1 md:py-2 text-[10px] sm:text-sm rounded-md shadow-md">

@@ -1,4 +1,3 @@
-
 import React from "react";
 import AutoSlider from "../../Component/AutoSlider";
 import Connections from "../../Component/Connections";
@@ -13,7 +12,9 @@ import AllDiseases from "../../Component/AllDiseases";
 import ScrollingTagline from "../../Component/ScrollingTagline";
 import OurPolicies from "../../Component/OurPolicies";
 import Footer from "../../Component/Footer";
-import Img7 from "../../assets/Images/NewSilder/Hospitals.jpg";
+
+import Healthcard from '../../assets/Images/NewSilder/Aarogy Aadhar01.jpg'
+import bgimage from '../../assets/Images/HomePage Background.jpeg'
 
 const Home = () => {
   return (
@@ -33,7 +34,7 @@ const Home = () => {
             <AutoSlider />
           </div>
           <div className="col-span-4 z-0 hidden xl:flex">
-            <img src={Img7} alt="" className="w-full xl:h-[345px]" />
+            <img src={Healthcard} alt="" className="w-full xl:h-[345px]" />
           </div>
         </div>
         <div className="hidden lg:flex">

@@ -1,10 +1,22 @@
+// import React from 'react'
+
+// const TopFundraisersNavbar = () => {
+//   return (
+//     <div>
+      
+//     </div>
+//   )
+// }
+
+// export default TopFundraisersNavbar
 import React, { useState } from "react";
 import Aarogya_Aadhar_logo from "../assets/Images/Aarogya_Aadhar_logo.png";
 import { NavLink, useNavigate } from "react-router-dom";
 import { IoMenu, IoClose } from "react-icons/io5";
 import { FaPhoneAlt } from "react-icons/fa";
+import { IoSearch } from "react-icons/io5";
 
-const AarogyaDhanNavbar = () => {
+const TopFundraisersNavbar = () => {
   const navigate = useNavigate();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -14,37 +26,20 @@ const AarogyaDhanNavbar = () => {
 
   return (
     <>
-      <div className="navbar-container">
-        <div className="top-banner bg-white">
-          <div className="flex flex-col lg:flex-row justify-center items-center gap-2 px-2 py-2">
-            <div className="flex flex-row items-center w-auto">
-              <p className="text-[10px] sm:text-[11px] md:text-sm lg:text-lg text-center font-bold text-blue-900">
-                Be a savior for many. Donate monthly to help save invaluable lives in India
-              </p>
-              <div className="hidden lg:flex mx-6">
-                <span className="double-arrow text-blue-900">»</span>
-              </div>
-              <button className="donate-button ml-2 text-[10px] sm:text-[11px] md:text-[12px] lg:text-[14px] font-semibold sm:font-bold bg-blue-900 w-44 text-white py-1 px-1 sm:py-2 sm:px-3 rounded-md whitespace-nowrap">
-                Donate Monthly
-              </button>
-            </div>
-          </div>
-        </div>
-        
-        <div className="px-2 lg:px-5 xl:px-10 bg-gray-100 py-2">
+      <div className="navbar-container">        
+        <div className="px-2 lg:px-5 xl:px-10 bg-gray-100 py-4">
           <div className="flex w-full gap-2 justify-between  lg:justify-evenly items-center">
-            <div className=" flex gap-2 xl:gap-5">
+            <div className=" flex gap-2 xl:gap-5 justify-center items-center">
               <img
                 src={Aarogya_Aadhar_logo}
                 alt="Logo"
                 onClick={() => navigate("/")}
-                className="logo h-10 w-24 sm:h-12 sm:w-32 lg:h-10 lg:w-24 xl:h-12 xl:w-32 cursor-pointer"
+                className="logo h-10 w-24 sm:h-12 sm:w-32 lg:h-10 lg:w-24 xl:h-14 xl:w-40 cursor-pointer"
               />
-              <img
-                src={Aarogya_Aadhar_logo}
-                alt="Logo"
-                className="logo h-10 w-24 sm:h-12 sm:w-32 lg:h-10 lg:w-24 xl:h-12 xl:w-32"
-              />
+              <div className="border border-blue-400 bg-white flex justify-center items-center rounded-md">
+             <input type="text" placeholder="Search" className=" px-2 h-9 w-full rounded-md"/>
+             <IoSearch className=" h-5 w-5 text-blue-900 mr-2"/>
+            </div>
             </div>
             <div className="hidden lg:flex  lg:gap-3 xl:gap-6">
               <p className="cursor-pointer text-[10px] lg:text-[13px] xl:text-[16px] text-blue-900">
@@ -54,7 +49,7 @@ const AarogyaDhanNavbar = () => {
                 <NavLink to="/howitwork">How it Works</NavLink>
               </p>
               <p className="cursor-pointer text-[10px] lg:text-[13px] xl:text-[16px] text-blue-900">Browse Fundraisers</p>
-              <p className="cursor-pointer text-[10px] lg:text-[13px] xl:text-[16px] text-blue-900" onClick={()=>navigate('/topfundraisers')}>Top Fundraisers</p>
+              {/* <p className="cursor-pointer text-[10px] lg:text-[13px] xl:text-[16px] text-blue-900">Top Fundraisers</p> */}
             </div>
             <div className="flex items-center gap-2">
               <button className="help-button hidden lg:flex ml-2 text-[10px] sm:text-[11px] w-auto md:text-[14px] xl:text-[16px] lg:text-[13px] font-semibold sm:font-bold bg-blue-900 text-white py-1 px-1 sm:py-2 sm:px-2 xl-px-3 rounded-md whitespace-nowrap">Help</button>
@@ -101,4 +96,4 @@ const AarogyaDhanNavbar = () => {
   );
 };
 
-export default AarogyaDhanNavbar;
+export default TopFundraisersNavbar;
