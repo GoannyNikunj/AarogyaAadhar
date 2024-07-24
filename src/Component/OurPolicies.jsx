@@ -67,9 +67,9 @@ const OurPolicies = () => {
         <p className=" text-[10px] sm:text-[11px] xl:text-[16px] text-blue-900">Social Links</p>
         <div className=" flex gap-3 py-2">
           <FaFacebook className=" h-6 w-6 text-blue-700 cursor-pointer" />
-          <FaInstagramSquare className=" h-6 w-6 text-red-500 cursor-pointer" />
+          <FaInstagramSquare className=" h-6 w-6 text-blue-700 cursor-pointer" />
           <FaTwitter className=" h-6 w-6 text-blue-700 cursor-pointer" />
-          <IoLogoYoutube className=" h-6 w-6 text-red-500 cursor-pointer" />
+          <IoLogoYoutube className=" h-6 w-6 text-blue-700 cursor-pointer" />
           <FaLinkedin className=" h-6 w-6 text-blue-700 cursor-pointer" />
         </div>
        

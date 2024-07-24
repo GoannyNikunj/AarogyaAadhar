@@ -77,13 +77,13 @@ const Dropdown = ({ label, options }) => {
   return (
     <div className="relative inline-block text-left">
       <button
-        className={`inline-flex justify-center w-full h-8 text-[#4b3279] rounded-md px-1 sm:px-2 py-1 text-[12px] lg:px-0 xl:px-[6px] sm:text-sm lg:text-[11px] xl:text-[13px] font-medium`}
+        className={`inline-flex justify-center w-full h-8 hover:bg-blue-400 hover:text-white text-[#4b3279] rounded-md px-1 sm:px-2 py-1 text-[12px] lg:px-0 xl:px-[6px] sm:text-sm lg:text-[11px] xl:text-[13px] font-medium`}
         onMouseEnter={openDropdown}
         onMouseLeave={closeDropdown}
         onClick={() => setIsOpen(!isOpen)}
       >
         {label}
-        <svg
+        {/* <svg
           className={`xl:ml-[1px] -mr- h-5 w-5 ${isOpen ? 'transform rotate-180' : ''}`}
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 20 20"
@@ -95,12 +95,12 @@ const Dropdown = ({ label, options }) => {
             d="M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.71-3.71a.75.75 0 011.06 1.06l-4.25 4.25a.75.75 0 01-1.06 0L5.23 8.29a.75.75 0 01.02-1.06z"
             clipRule="evenodd"
           />
-        </svg>
+        </svg> */}
       </button>
       {isOpen && (
         <div
           ref={dropdownRef}
-          className={`absolute z-10 mt-2 bg-[#fafaf9] opacity-100 rounded-md shadow-lg ${dropdownPosition === 'right' ? 'right-0' : 'left-0'}`}
+          className={`absolute z-10 mt-2 bg-[#fafaf9]  rounded-md shadow-lg ${dropdownPosition === 'right' ? 'right-0' : 'left-0'}`}
           onMouseEnter={openDropdown}
           onMouseLeave={closeDropdown}
           style={{ width: `${dropdownWidth}px` }}
