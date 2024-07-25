@@ -99,12 +99,13 @@ const Faq = () => {
                   {item.question}
                   <span className="ml-2">
                     {accordionOpen === index ? (
-                     <text> -</text>
+                      <text> -</text>
                     ) : (
-                    <text>+</text>
+                      <text>+</text>
                     )}
                   </span>
                 </button>
+                <hr className="my-2 ml-4" style={{ borderColor: "gray" }} />
                 {accordionOpen === index && (
                   <div
                     className="text-left p-4 border-l-2 border-blue-500"

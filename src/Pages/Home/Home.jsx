@@ -10,8 +10,8 @@ import AutoSlider1 from "../../Component/AutoSlider1";
 import GetLink from "../../Component/GetLink";
 import AllDiseases from "../../Component/AllDiseases";
 import ScrollingTagline from "../../Component/ScrollingTagline";
-import OurPolicies from "../../Component/OurPolicies";
-import Footer from "../../Component/Footer";
+// import OurPolicies from "../../Component/OurPolicies";
+// import Footer from "../../Component/Footer";
 
 import Healthcard from '../../assets/Images/NewSilder/Aarogy Aadhar01.jpg'
 
@@ -33,7 +33,7 @@ const Home = () => {
             <AutoSlider />
           </div>
           <div className="col-span-4 z-0 hidden xl:flex">
-            <img src={Healthcard} alt="" className="w-full xl:h-[345px]" />
+            {/* <img src={Healthcard} alt="" className="w-full xl:h-[345px]" /> */}
           </div>
         </div>
         <div className="hidden lg:flex">
@@ -115,8 +115,8 @@ const Home = () => {
           <ServicePartner />
           <GetLink />
         </div>
-        <OurPolicies />
-        <Footer />
+        {/* <OurPolicies /> */}
+        {/* <Footer /> */}
       </div>
     </div>
   );

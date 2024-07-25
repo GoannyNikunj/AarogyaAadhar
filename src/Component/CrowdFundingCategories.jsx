@@ -83,6 +83,7 @@ const CrowdFundingCategories = () => {
   };
 
   return (
+
     <div className="slider-container px-5 sm:px-10 lg:px-20 mt-3" >
       <h1 className="text-center lg:mb-2 text-xl sm:text-2xl md:text-3xl font-bold text-blue-900">Crowdfunding Categories</h1>
       {/* <hr className="divider mt-[10px]"  /> */}
