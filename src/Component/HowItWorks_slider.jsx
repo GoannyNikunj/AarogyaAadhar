@@ -5,7 +5,7 @@ const HowItWorks_slider = () => {
     <>
     <div className="slider" style={{marginTop:70}}>
             <div className="slider-content">
-                <div className="label mt-20">
+                <div className="label mt-20 px-4">
                     <h1 className='text-blue-900 font-bold' style={{fontSize:50}}>Need Funds For Your <br/>Medical Treatment</h1> 
                     <br/>
                     <p className='text-blue-500 font-semibold' style={{fontSize:20}}>Dont worry wou've come to the right platform</p>

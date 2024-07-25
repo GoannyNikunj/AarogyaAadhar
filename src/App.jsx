@@ -6,6 +6,7 @@ import All_Routes from './AllRoutes/All_Routes'
 import EnquireButton from './Component/EnquireNow'
 import OurPolicies from './Component/OurPolicies'
 import MobileNavbar from './Component/MobileNavabr'
+import bgimage from './assets/Images/Icon Background.jpg'
 import BottomTab from './Component/BottomTab'
 
 function App() {
@@ -14,7 +15,7 @@ function App() {
   return (
     <div>
    
-      <div >  
+      <div style={{ backgroundImage: `url(${bgimage})`, height: '100%', width: '100%', backgroundSize: 'cover', backgroundRepeat: 'repeat', backgroundAttachment: 'fixed' }}>  
             <All_Routes/>
      <EnquireButton/>
 

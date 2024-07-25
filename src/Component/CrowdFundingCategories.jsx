@@ -83,12 +83,12 @@ const CrowdFundingCategories = () => {
   };
 
   return (
-    <div className="slider-container px-5 sm:px-10 lg:px-20 mt-3" >
-      <h1 className="text-center lg:mb-2 text-xl sm:text-2xl md:text-3xl font-bold text-blue-900">Crowdfunding Categories</h1>
-      {/* <hr className="divider mt-[10px]"  /> */}
+    <div className="slider-container" style={{ width: "88%", margin: "0 auto" }}>
+      <h1 className="heading mb-5 text-3xl font-bold text-blue-900">Crowdfunding Categories</h1>
+      <hr className="divider" style={{ marginTop: 20, marginBottom: 50 }} />
       <Slider {...settings}>
         {categories.map((category, index) => (
-          <div key={index} className="">
+          <div key={index} className="card-container">
             <div className="card">
               <div className="image-container">
                 <img src={category.img} alt={category.name} className="card-image" />

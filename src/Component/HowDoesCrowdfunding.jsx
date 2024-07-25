@@ -15,59 +15,70 @@ const HowDoesCrowdfunding = () => {
             }
         };
 
-        // Play the first video when component mounts
         playNextVideo();
 
-        // Event listener for ending of videos
-        videoRefs[currentStep].current.addEventListener('ended', () => {
+        const handleVideoEnd = () => {
             if (currentStep < videoRefs.length - 1) {
                 setCurrentStep(currentStep + 1);
             }
-        });
+        };
 
-        // Cleanup event listener
+        const currentVideoRef = videoRefs[currentStep].current;
+        currentVideoRef.addEventListener('ended', handleVideoEnd);
+
         return () => {
-            videoRefs[currentStep].current.removeEventListener('ended', () => {
-                if (currentStep < videoRefs.length - 1) {
-                    setCurrentStep(currentStep + 1);
-                }
-            });
+            currentVideoRef.removeEventListener('ended', handleVideoEnd);
         };
     }, [currentStep]);
 
     return (
-        <>
-            <div className='heading text-center mb-5'>
-                How Does Crowdfunding on ImpactGuru Work?
-                <hr className="divider" style={{ marginTop: 20, marginBottom: 30 }} />
-            </div>
-            <div className='outerdiv2'>
-                <div className='partition2 left-text'>
-                    <div className='step-container'>
-                        <div className={`step ${currentStep === 0 ? 'step-active' : 'step-inactive'}`}>
-                            <p>1</p>
-                            <p>Start a free fundraiser</p>
-                            <p>Start a free fundraiser by filling in all the relevant details</p>
-                        </div>
-                        <div className={`step ${currentStep === 1 ? 'step-active' : 'step-inactive'}`}>
-                            <p>2</p>
-                            <p>Start a free fundraiser</p>
-                            <p>Start a free fundraiser by filling in all the relevant details</p>
-                        </div>
-                        <div className={`step ${currentStep === 2 ? 'step-active' : 'step-inactive'}`}>
-                            <p>3</p>
-                            <p>Start a free fundraiser</p>
-                            <p>Start a free fundraiser by filling in all the relevant details</p>
+        <div className='flex justify-center mt-10 mb-12'>
+            <div className='w-full md:w-3/5'>
+                <div className='text-[30px] text-center mb-5'>
+                    How Does Crowdfunding on ImpactGuru Work?
+                    <hr className="divider" style={{ marginTop: 20, marginBottom: 30 }} />
+                </div>
+                <div className='flex flex-col md:flex-row justify-between'>
+                    <div className='w-full md:w-1/2 p-4'>
+                        <div className='step-container'>
+                            <div className={`step ${currentStep === 0 ? 'step-active' : 'step-inactive'}`}>
+                                <p>1</p>
+                                <p>Start a Free Fundraiser</p>
+                                <p>Start a free fundraiser by filling in all the relevant details</p>
+                                <br />
+                                <hr />
+                            </div>
+                            <div className={`step ${currentStep === 1 ? 'step-active' : 'step-inactive'}`}>
+                                <p>2</p>
+                                <p>Share Your Fundraiser</p>
+                                <p>Share your fundraiser with friends, family, and strangers to raise funds quickly</p>
+                                <br />
+                                <hr />
+                            </div>
+                            <div className={`step ${currentStep === 2 ? 'step-active' : 'step-inactive'}`}>
+                                <p>3</p>
+                                <p>Withdraw All Donations</p>
+                                <p>Withdraw all the money you receive at any point in your fundraising journey</p>
+                                <br />
+                                <hr />
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div className='partition2'>
-                    {videoRefs.map((videoRef, index) => (
-                        <video key={index} ref={videoRef} src={index === 0 ? step1 : index === 1 ? step2 : step3} autoPlay={index === 0} muted className={currentStep === index ? 'video-visible' : 'video-hidden'} />
-                    ))}
+                    <div className='w-full md:w-1/2 p-4 flex justify-center'>
+                        {videoRefs.map((videoRef, index) => (
+                            <video
+                                key={index}
+                                ref={videoRef}
+                                src={index === 0 ? step1 : index === 1 ? step2 : step3}
+                                autoPlay={index === 0}
+                                muted
+                                className={`w-3/5 ${currentStep === index ? 'block' : 'hidden'}`}
+                            />
+                        ))}
+                    </div>
                 </div>
             </div>
-        </>
+        </div>
     );
 };
 
