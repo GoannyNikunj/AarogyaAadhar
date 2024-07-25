@@ -12,7 +12,7 @@ const Aarogyadhan_slider = () => {
                     <br/>
                     <p className='text-center text-blue-500 font-semibold text-[15px] sm:text-[17px] md:text-[18px] lg:text-[19px] xl:text-[20px]'>With <b className='text-blue-900 font-bold'>0%*</b> platform fee, you can raise funds too!</p>
                     <br/>
-                    <button className='btn help-button rounded-full py-[5px] px-5 sm:p-[10px] md:p-[15px]' >Start A Free Fundraiser</button>
+                    <button className='btn help-button rounded-full py-[5px] px-5 sm:p-[10px] md:p-[15px] bg-blue-600 border-blue-700' >Start A Free Fundraiser</button>
                 </div>
                 <img src="https://st4.depositphotos.com/16122460/28631/i/450/depositphotos_286315472-stock-photo-woman-giving-red-heart-to.jpg" alt="Image" className=' h-[85vh]' />
             </div>

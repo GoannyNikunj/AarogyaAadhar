@@ -84,7 +84,7 @@ const CrowdFundingCategories = () => {
 
   return (
     <div className="slider-container" style={{ width: "88%", margin: "0 auto" }}>
-      <h1 className="heading mb-5 text-3xl font-bold text-blue-900">Crowdfunding Categories</h1>
+      <h1 className="heading mb-5 text-3xl font-bold text-blue-900 text-center">Crowdfunding Categories</h1>
       <hr className="divider" style={{ marginTop: 20, marginBottom: 50 }} />
       <Slider {...settings}>
         {categories.map((category, index) => (

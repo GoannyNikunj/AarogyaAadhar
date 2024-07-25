@@ -1,23 +1,22 @@
 import React from 'react';
-import '../css/style.css'; // Assuming you create a separate CSS file for this component
-
-const HowItWorks_achievments = () => {
+import "../css/style.css"
+const HowItWorksAchievements = () => {
   return (
-    <div className="content-container">
-      <div className="Howitworkspartition">
-        <h3 style={{fontSize:25}}>30 Lac+</h3>
+    <div className=" content-container w-11/12 mx-auto rounded-lg shadow-md flex justify-around items-center ">
+      <div className="flex-1 m-2 p-5 rounded-lg font-bold">
+        <h3 className="text-2xl">30 Lac+</h3>
         <p>Generous Donors</p>
       </div>
-      <div className="Howitworkspartition">
-      <h3 style={{fontSize:25}}>2 Lac+</h3>
-      <p>Fundraisers Created Successfully</p>
+      <div className="flex-1 m-2 p-5 rounded-lg font-bold">
+        <h3 className="text-2xl">2 Lac+</h3>
+        <p>Fundraisers Created Successfully</p>
       </div>
-      <div className="Howitworkspartition">
-      <h3 style={{fontSize:25}}>Fastest ₹1 Crore</h3>
-      <p>Raised In 24 Hrs!</p>
+      <div className="flex-1 m-2 p-5 rounded-lg font-bold">
+        <h3 className="text-2xl">Fastest ₹1 Crore</h3>
+        <p>Raised In 24 Hrs!</p>
       </div>
     </div>
   );
 }
 
-export default HowItWorks_achievments;
+export default HowItWorksAchievements;

@@ -10,6 +10,7 @@ import HowDoesCrowdfunding from './HowDoesCrowdfunding';
 import FundraisingJourney from './FundraisingJourney';
 import WhyFundraiser from './WhyFundraise';
 import Faq from './Faq';
+import HowItWorksFooter from './HowItWorksFooter';
 const HowItWorks = () => {
     return (
         <div>
@@ -22,8 +23,9 @@ const HowItWorks = () => {
             <WhatsCrowdFunding/>
             <HowDoesCrowdfunding/>
             <FundraisingJourney/>
-            {/* <WhyFundraiser/> */}
+            <WhyFundraiser/>
             <Faq/>
+            <HowItWorksFooter/>
         </div>
     )
 }

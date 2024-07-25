@@ -20,6 +20,8 @@ const HowDoesCrowdfunding = () => {
         const handleVideoEnd = () => {
             if (currentStep < videoRefs.length - 1) {
                 setCurrentStep(currentStep + 1);
+            } else {
+                setCurrentStep(0); // Reset to first step after the last video
             }
         };
 
@@ -31,37 +33,35 @@ const HowDoesCrowdfunding = () => {
         };
     }, [currentStep]);
 
+    const handleStepClick = (stepIndex) => {
+        if (stepIndex !== currentStep) {
+            setCurrentStep(stepIndex);
+        }
+    };
+
     return (
-        <div className='flex justify-center mt-10 mb-12'>
+        <div className='flex justify-center mt-8 mb-8'>
             <div className='w-full md:w-3/5'>
-                <div className='text-[30px] text-center mb-5'>
+                <div className='text-[30px] text-center mb-3'>
                     How Does Crowdfunding on ImpactGuru Work?
                     <hr className="divider" style={{ marginTop: 20, marginBottom: 30 }} />
                 </div>
                 <div className='flex flex-col md:flex-row justify-between'>
                     <div className='w-full md:w-1/2 p-4'>
                         <div className='step-container'>
-                            <div className={`step ${currentStep === 0 ? 'step-active' : 'step-inactive'}`}>
-                                <p>1</p>
-                                <p>Start a Free Fundraiser</p>
-                                <p>Start a free fundraiser by filling in all the relevant details</p>
-                                <br />
-                                <hr />
-                            </div>
-                            <div className={`step ${currentStep === 1 ? 'step-active' : 'step-inactive'}`}>
-                                <p>2</p>
-                                <p>Share Your Fundraiser</p>
-                                <p>Share your fundraiser with friends, family, and strangers to raise funds quickly</p>
-                                <br />
-                                <hr />
-                            </div>
-                            <div className={`step ${currentStep === 2 ? 'step-active' : 'step-inactive'}`}>
-                                <p>3</p>
-                                <p>Withdraw All Donations</p>
-                                <p>Withdraw all the money you receive at any point in your fundraising journey</p>
-                                <br />
-                                <hr />
-                            </div>
+                            {[...Array(3)].map((_, index) => (
+                                <div
+                                    key={index}
+                                    className={`step ${currentStep === index ? 'step-active' : 'step-inactive'}`}
+                                    onClick={() => handleStepClick(index)}
+                                >
+                                    <p>{index + 1}</p>
+                                    <p>{index === 0 ? 'Start a Free Fundraiser' : index === 1 ? 'Share Your Fundraiser' : 'Withdraw All Donations'}</p>
+                                    <p>{index === 0 ? 'Start a free fundraiser by filling in all the relevant details' : index === 1 ? 'Share your fundraiser with friends, family, and strangers to raise funds quickly' : 'Withdraw all the money you receive at any point in your fundraising journey'}</p>
+                                    <br />
+                                    <hr />
+                                </div>
+                            ))}
                         </div>
                     </div>
                     <div className='w-full md:w-1/2 p-4 flex justify-center'>
@@ -70,9 +70,9 @@ const HowDoesCrowdfunding = () => {
                                 key={index}
                                 ref={videoRef}
                                 src={index === 0 ? step1 : index === 1 ? step2 : step3}
-                                autoPlay={index === 0}
                                 muted
                                 className={`w-3/5 ${currentStep === index ? 'block' : 'hidden'}`}
+                                onClick={() => handleStepClick(index)}
                             />
                         ))}
                     </div>

@@ -1,47 +1,90 @@
 import React, { useState } from 'react';
-import "../css/style.css"
-const WhyFundraiser = () => {
+
+const WhyFundraise = () => {
     const [showMore, setShowMore] = useState(false);
 
-    const handleClick = () => {
-        setShowMore(true);
-    };
-
-    const buttonStyle = {
-        width: '270px',
-    };
-    
-
     return (
-        <div className="flex justify-center mt-10 mb-12">
-            <div className="w-3/5">
-                <div className='text-2xl text-center mb-5'>
-                    Why Fundraise With ImpactGuru?
-                </div>
-                <hr className='divider my-5' />
-                <div className="grid grid-cols-3 gap-4">
-                    <div className="bg-gray-100 p-5 rounded h-[200px]">Card 1</div>
-                    <div className="bg-gray-100 p-5 rounded h-[250px]">Card 2</div>
-                    <div className="bg-gray-100 p-5 rounded h-[200px]">Card 3</div>
-                </div>
-                <div className="grid grid-cols-3 gap-4 mt-4">
-                    <div className={`bg-gray-100 p-5 rounded ${showMore ? '' : 'blur'}`}>Card 4</div>
-                    <div className={`bg-gray-100 p-5 rounded ${showMore ? '' : 'blur'}`}>Card 5</div>
-                    <div className={`bg-gray-100 p-5 rounded ${showMore ? '' : 'blur'}`}>Card 6</div>
+        <div className='mb-16'>
+            <div className='text-2xl text-center mb-3'>
+                Why Fundraise With ImpactGuru?
+            </div>
+            <hr className='divider mb-8' />
+
+            <div className='relative px-4 md:px-10'>
+                <div className={`flex gap-4 justify-center items-start transition-all duration-300 ease-in-out ${showMore ? 'h-auto' : 'h-[350px] overflow-hidden'}`}>
+                    <div className='flex flex-col gap-4'>
+                        <div className='w-[240px] h-[236px] flex flex-col justify-center items-center bg-slate-200'>
+                            <img/>
+                            <h1>0%</h1>
+                            <p>Platform Fee</p>
+                        </div>
+                        <div className='w-[240px] h-[236px] flex flex-col justify-center items-center bg-slate-200'>
+                        <img/>
+                            <h1>24*7</h1>
+                            <p>Personalized Expert Assistance</p>
+                        </div>
+                        <div className='w-[240px] h-[236px] flex flex-col justify-center items-center bg-slate-200'>
+                        <img/>
+                            <h1>Fast</h1>
+                            <p>Review of your fundraiser</p>
+                        </div>
+                        <div className='w-[240px] h-[236px] flex flex-col justify-center items-center bg-slate-200'>
+                        <img/>
+                            <h1>Robust Due Diligence</h1>
+                            <p>To Ensure Trust & Safety
+                            </p>
+                        </div>
+                    </div>
+                    <div className='flex flex-col gap-4'>
+                        <div className='w-[240px] h-[311px]  flex flex-col justify-center items-center bg-slate-200'>
+                        <img/>
+                            <h1>Free Fundraising Mobile App</h1>
+                            <p>For iOS and Android</p>
+                        </div>
+                        <div className='w-[240px] h-[311px]  flex flex-col justify-center items-center bg-slate-200'>
+                        <img/>
+                            <h1>All Payments Accepted</h1>
+                            <p> Google Pay, Paytm, UPI, Net Banking & Wallets Accepted</p>
+                        </div>
+                    </div>
+                    <div className='flex flex-col gap-4'>
+                        <div className='w-[240px] h-[236px] flex flex-col justify-center items-center bg-slate-200'>
+                        <img/>
+                            <h1>30+ Lakh</h1>
+                            <p>Donor Community</p>
+                        </div>
+                        <div className='w-[240px] h-[236px] flex flex-col justify-center items-center bg-slate-200'>
+                        <img/>
+                            <h1>25000+</h1>
+                            <p>Patients Funded</p>
+                        </div>
+                        <div className='w-[240px] h-[236px] flex flex-col justify-center items-center bg-slate-200'>
+                        <img/>
+                            <h1>User-Friendly Dashboard</h1>
+                            <p>to Raise Maximum Funds</p>
+                        </div>
+                        <div className='w-[240px] h-[236px] flex flex-col justify-center items-center bg-slate-200'>
+                        <img/>
+                            <h1>Premium & Easy-To-Use</h1>
+                            <p>Fundraising Tools</p>
+                        </div>
+                    </div>
                 </div>
                 {!showMore && (
-                    <div className='text-center mb-5'>
-                        <a href="#" onClick={handleClick}>Click to view all features</a>
-                    </div>
+                    <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-blue-50 to-white/10 pointer-events-none"></div>
                 )}
-                <div className="flex justify-center space-x-4">
-                    <button style={buttonStyle} className="bg-gradient-to-r from-sky-400 to-blue-500 text-white font-bold py-2 px-4 rounded">
-                        START A FREE FUNDRAISER
-                    </button>
-                </div>
+            </div>
+
+            <div className='text-center'>
+                <p onClick={() => setShowMore(!showMore)} className='underline text-gray-800'> {showMore ? 'Click to view less' : 'Click to view all features'}</p>
+            </div>
+            <div className='text-center p-4'>
+                <button className="bg-gradient-to-r from-sky-400 to-blue-500 text-white font-bold py-2 px-4 rounded">
+                    START A FREE FUNDRAISER
+                </button>
             </div>
         </div>
     );
-};
+}
 
-export default WhyFundraiser;
+export default WhyFundraise;

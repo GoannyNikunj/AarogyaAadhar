@@ -24,7 +24,7 @@ const AarogyaDhanNavbar = () => {
               <div className="hidden lg:flex mx-6">
                 <span className="double-arrow text-blue-900">»</span>
               </div>
-              <button className="donate-button ml-2 text-[10px] sm:text-[11px] md:text-[12px] lg:text-[14px] font-semibold sm:font-bold bg-blue-900 w-44 text-white py-1 px-1 sm:py-2 sm:px-3 rounded-md whitespace-nowrap">
+              <button className="donate-button bg-blue-600 border-blue-700 ml-2 text-[10px] sm:text-[11px] md:text-[12px] lg:text-[14px] font-semibold sm:font-bold w-44 text-white py-1 px-1 sm:py-2 sm:px-3 rounded-md whitespace-nowrap">
                 Donate Monthly
               </button>
             </div>
@@ -47,7 +47,7 @@ const AarogyaDhanNavbar = () => {
               />
             </div>
             <div className="hidden lg:flex  lg:gap-3 xl:gap-6">
-              <p className="cursor-pointer text-[10px] lg:text-[13px] xl:text-[16px] text-blue-900">
+              <p className="cursor-pointer text-[10px] lg:text-[13px] xl:text-[16px] text-blue-900 ">
                 Start a Free Fundraiser
               </p>
               <p className="cursor-pointer text-[10px] lg:text-[13px] xl:text-[16px] text-blue-900">
@@ -57,8 +57,8 @@ const AarogyaDhanNavbar = () => {
               <p className="cursor-pointer text-[10px] lg:text-[13px] xl:text-[16px] text-blue-900" onClick={()=>navigate('/topfundraisers')}>Top Fundraisers</p>
             </div>
             <div className="flex items-center gap-2">
-              <button className="help-button hidden lg:flex ml-2 text-[10px] sm:text-[11px] w-auto md:text-[14px] xl:text-[16px] lg:text-[13px] font-semibold sm:font-bold bg-blue-900 text-white py-1 px-1 sm:py-2 sm:px-2 xl-px-3 rounded-md whitespace-nowrap">Help</button>
-              <button className="help-button hidden lg:flex ml-2 text-[10px] sm:text-[11px] w-auto md:text-[14px] xl:text-[16px] lg0text-[14px] font-semibold sm:font-bold bg-blue-900 text-white py-1 px-1 sm:py-2 sm:px-2 xl:px-3 rounded-md whitespace-nowrap">Login</button>
+              <button className="help-button hidden lg:flex ml-2 text-[10px] sm:text-[11px] w-auto md:text-[14px] xl:text-[16px] lg:text-[13px] font-semibold sm:font-bold bg-blue-600 text-white py-1 px-1 sm:py-2 sm:px-2 xl-px-3 rounded-md whitespace-nowrap">Help</button>
+              <button className="help-button hidden lg:flex ml-2 text-[10px] sm:text-[11px] w-auto md:text-[14px] xl:text-[16px] lg0text-[14px] font-semibold sm:font-bold bg-blue-600 text-white py-1 px-1 sm:py-2 sm:px-2 xl:px-3 rounded-md whitespace-nowrap">Login</button>
               <select className="bg-transparent py-1 px-2 text-[12px] sm:text-[14px] md:text-[14px] xl:text-[16px] lg:text-[14px] rounded">
                 <option value="INR text-blue-900">INR</option>
               </select>
