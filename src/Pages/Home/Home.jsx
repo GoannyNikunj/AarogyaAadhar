@@ -13,8 +13,7 @@ import ScrollingTagline from "../../Component/ScrollingTagline";
 // import OurPolicies from "../../Component/OurPolicies";
 // import Footer from "../../Component/Footer";
 
-// import Healthcard from '../../../src/assets/Images/NewSilder/abc.jpeg'
-// import bgimage from '../../assets/Images/HomePage Background.jpeg'
+import Healthcard from '../../assets/Images/NewSilder/Aarogy Aadhar01.jpg'
 
 const Home = () => {
   return (
