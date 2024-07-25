@@ -14,7 +14,6 @@ import OurPolicies from "../../Component/OurPolicies";
 import Footer from "../../Component/Footer";
 
 import Healthcard from '../../assets/Images/NewSilder/Aarogy Aadhar01.jpg'
-import bgimage from '../../assets/Images/HomePage Background.jpeg'
 
 const Home = () => {
   return (

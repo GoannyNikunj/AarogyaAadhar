@@ -3,6 +3,7 @@
 
 import React, { useState, useRef, useEffect } from 'react';
 
+
 const Dropdown = ({ label, options }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [dropdownWidth, setDropdownWidth] = useState(140); // Initial minimum width set to 140px
@@ -77,7 +78,7 @@ const Dropdown = ({ label, options }) => {
   return (
     <div className="relative inline-block text-left">
       <button
-        className={`inline-flex justify-center w-full h-8 hover:bg-blue-400 hover:text-white text-[#4b3279] rounded-md px-1 sm:px-2 py-1 text-[12px] lg:px-0 xl:px-[6px] sm:text-sm lg:text-[11px] xl:text-[13px] font-medium`}
+        className={`inline-flex justify-center w-full h-8 hover:bg-blue-400 hover:text-white text-[#4b3279] rounded-md px-1 sm:px-2 py-1 text-[12px] lg:px-0 xl:px-[6px] sm:text-sm lg:text-[12px] xl:text-[14px] font-medium`}
         onMouseEnter={openDropdown}
         onMouseLeave={closeDropdown}
         onClick={() => setIsOpen(!isOpen)}
@@ -98,39 +99,74 @@ const Dropdown = ({ label, options }) => {
         </svg> */}
       </button>
       {isOpen && (
+        // <div
+        //   ref={dropdownRef}
+        //   className={`absolute z-10 mt-2 bg-[#fafaf9] rounded-md shadow-lg ${dropdownPosition === 'right' ? 'right-0' : 'left-0'}`}
+        //   onMouseEnter={openDropdown}
+        //   onMouseLeave={closeDropdown}
+        //   style={{ width: `${dropdownWidth}px` }}
+        // >
+        //   <div className="py-1 flex flex-wrap" role="menu" aria-orientation="vertical" aria-labelledby="options-menu">
+        //     {optionColumns.map((column, columnIndex) => (
+        //       <div 
+        //         key={columnIndex} 
+        //         className="flex flex-col flex-1 min-w-0" 
+        //         style={{ 
+        //           width: `${dropdownWidth / optionColumns.length}px`, 
+        //           minWidth: `${label === 'Registration' || label === 'Login' || label === 'Language' || React.isValidElement(label) ? 140 : 220}px`, 
+        //           borderRight: columnIndex < optionColumns.length - 1 ? '1px solid #e5e7eb' : 'none' 
+        //         }}
+        //       >
+        //         {column.map((option, index) => (
+        //           <a
+        //             key={index} 
+        //             href="#"
+        //             className="block pl-2 py-[1px] mb-1 text-gray-700 hover:bg-gray-100 whitespace-nowrap text-[12px]"
+        //             role="menuitem"
+        //             onClick={closeDropdown}
+        //           >
+        //             {option}
+        //           </a>
+        //         ))}
+        //       </div>
+        //     ))}
+        //   </div>
+        // </div>
+        
         <div
-          ref={dropdownRef}
-          className={`absolute z-10 mt-2 bg-[#fafaf9]  rounded-md shadow-lg ${dropdownPosition === 'right' ? 'right-0' : 'left-0'}`}
-          onMouseEnter={openDropdown}
-          onMouseLeave={closeDropdown}
-          style={{ width: `${dropdownWidth}px` }}
-        >
-          <div className="py-1 flex flex-wrap" role="menu" aria-orientation="vertical" aria-labelledby="options-menu">
-            {optionColumns.map((column, columnIndex) => (
-              <div 
-                key={columnIndex} 
-                className="flex flex-col flex-1 min-w-0" 
-                style={{ 
-                  width: `${dropdownWidth / optionColumns.length}px`, 
-                  minWidth: `${label === 'Registration' || label === 'Login' || label === 'Language' || React.isValidElement(label) ? 140 : 220}px`, 
-                  borderRight: columnIndex < optionColumns.length - 1 ? '1px solid #e5e7eb' : 'none' 
-                }}
-              >
-                {column.map((option, index) => (
-                  <a
-                    key={index} 
-                    href="#"
-                    className="block pl-2 py-[1px] mb-1 text-gray-700 hover:bg-gray-100 whitespace-nowrap text-[12px]"
-                    role="menuitem"
-                    onClick={closeDropdown}
-                  >
-                    {option}
-                  </a>
-                ))}
-              </div>
-            ))}
-          </div>
-        </div>
+  ref={dropdownRef}
+  className={`absolute z-10 mt-2 bg-white bg-opacity-95 rounded-md shadow-lg ${dropdownPosition === 'right' ? 'right-0' : 'left-0'}`}
+  onMouseEnter={openDropdown}
+  onMouseLeave={closeDropdown}
+  style={{ width: `${dropdownWidth}px` }}
+>
+  <div className="py-1 flex flex-wrap" role="menu" aria-orientation="vertical" aria-labelledby="options-menu">
+    {optionColumns.map((column, columnIndex) => (
+      <div 
+        key={columnIndex} 
+        className="flex flex-col flex-1 min-w-0" 
+        style={{ 
+          width: `${dropdownWidth / optionColumns.length}px`, 
+          minWidth: `${label === 'Registration' || label === 'Login' || label === 'Language' || React.isValidElement(label) ? 140 : 220}px`, 
+          borderRight: columnIndex < optionColumns.length - 1 ? '1px solid #e5e7eb' : 'none' 
+        }}
+      >
+        {column.map((option, index) => (
+          <a
+            key={index} 
+            href="#"
+            className="block pl-2 py-[1px] mb-1 text-blue-950 font-semibold hover:bg-gray-100 whitespace-nowrap text-[12px]"
+            role="menuitem"
+            onClick={closeDropdown}
+          >
+            {option}
+          </a>
+        ))}
+      </div>
+    ))}
+  </div>
+</div>
+
       )}
     </div>
   );
