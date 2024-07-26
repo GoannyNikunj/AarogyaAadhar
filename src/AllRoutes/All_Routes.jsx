@@ -1,13 +1,14 @@
 import React from 'react'
 import { Route, Routes } from 'react-router-dom'
 import Home from '../Pages/Home/Home'
-import AarogyaDhan from '../Pages/AarogyaDhan'
+import AarogyaDhan from '../Pages/aarogyadhan/AarogyaDhan'
 import BookAppointment from '../Component/BookAppointment'
 import BedBooking from '../Component/BedBooking'
 import BookAmbulance from '../Component/BookAmbulance'
 import ApplyHealthCard from '../Component/ApplyHealthCard'
-import HowItWorks from '../Component/HowItWorks'
+import HowItWorks from '../Pages/aarogyadhan/HowItWorks'
 import TopFundraisers from '../Pages/TopFundraisers'
+import Monthly from '../Pages/aarogyadhan/Monthly'
 
 const All_Routes = () => {
   return (  
@@ -22,6 +23,7 @@ const All_Routes = () => {
         <Route path="/aarogyadhan" element={<AarogyaDhan/>}/>
         <Route path='/howitwork' element={<HowItWorks/>}/>
         <Route path='/topfundraisers' element={<TopFundraisers/>}/>
+        <Route path='/monthly' element={<Monthly/>}/>
       </Routes>
     </div>
   )
