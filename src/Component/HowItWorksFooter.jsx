@@ -1,6 +1,6 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import logo from "../assets/Images/Aarogyadhan.png"
+import logo from "../assets/Images/Aarogyadhan.jpeg"
 import RapidSSL from '../assets/Images/impactFooterIcons/RapidSSL.png'
 import Visa from '../assets/Images/impactFooterIcons/Visa.png'
 import MasterCard from '../assets/Images/impactFooterIcons/MasterCard.png'
@@ -59,7 +59,7 @@ const HowItWorksFooter = () => {
                     </div>
                 </div>
             </div>
-            <div className="w-full bg-white mt-8" style={{ borderTopLeftRadius: 30, borderTopRightRadius: 30 }}>
+            <div className="w-full bg-white mt-8 p-3" style={{ borderTopLeftRadius: 30, borderTopRightRadius: 30 }}>
                 <div className="grid grid-cols-12 gap-4 px-10">
                     <div className="col-span-6">
                         <img src={logo} className='w-[150px]' />

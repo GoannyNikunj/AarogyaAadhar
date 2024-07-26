@@ -1,6 +1,6 @@
 body {
   margin: 0;
-  padding-top: 90px; 
+  /* padding-top: 90px;  */
 }
 .navbar-container {
   position: fixed;
@@ -316,5 +316,17 @@ video {
 }
 
 .step-inactive {
-  color:gray; /* Color for inactive steps */
+  color:gray; 
 }
+/* Monthly   Heartbeat animation */
+    @keyframes heartbeat {
+      0%, 100% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.2);
+      }
+    }
+    .heart-icon {
+      animation: heartbeat 1s infinite;
+    } 
