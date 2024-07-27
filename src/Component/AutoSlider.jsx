@@ -47,11 +47,11 @@ function AutoSlider() {
   };
 
   return (
-<div className="mx-1 sm:mx-0">
+<div className="mx-1 sm:mx-0 pt-2">
   <Slider {...settings}>
     <div className="relative">
-      <img src={Img1} alt="" className="xl:h-[345px] w-full" />
-      <div className="absolute inset-0 flex flex-col justify-center items-start px-2 sm:px-4 py-2">
+      <img src={Img1} alt="" className="xl:h-[56vh] w-full" />
+      <div className="absolute inset-0 flex flex-col justify-center items-start px-2 sm:px-4 py-0">
         <h1 className="opacity-90 text-blue-900 text-lg sm:text-3xl md:text-4xl lg:text-5xl font-bold leading-tight">
           Expert Doctors
         </h1>
@@ -65,8 +65,8 @@ function AutoSlider() {
     </div>
 
     <div className="relative">
-      <img src={Img2} alt="" className="xl:h-[345px] w-full" />
-      <div className="absolute inset-0 flex flex-col justify-center items-start px-2 sm:px-4 py-2">
+      <img src={Img2} alt="" className="xl:h-[56vh] w-full" />
+      <div className="absolute inset-0 flex flex-col justify-center items-start px-2 sm:px-4 py-0">
         <h1 className="opacity-90 text-blue-900 text-lg sm:text-3xl md:text-4xl lg:text-5xl font-bold leading-tight">
           Hospitals
         </h1>
@@ -80,8 +80,8 @@ function AutoSlider() {
     </div>
 
     <div className="relative">
-      <img src={Img3} alt="" className="xl:h-[345px] w-full" />
-      <div className="absolute inset-0 flex flex-col justify-center items-start px-2 sm:px-4 py-2">
+      <img src={Img3} alt="" className="xl:h-[56vh] w-full" />
+      <div className="absolute inset-0 flex flex-col justify-center items-start px-2 sm:px-4 py-0">
         <h1 className="opacity-90 text-blue-900 text-lg sm:text-3xl md:text-4xl lg:text-5xl font-bold leading-tight">
           Surgery Packages
         </h1>
@@ -95,8 +95,8 @@ function AutoSlider() {
     </div>
 
     <div className="relative">
-      <img src={Img4} alt="" className="xl:h-[345px] w-full" />
-      <div className="absolute inset-0 flex flex-col justify-center items-start px-2 sm:px-4 py-2">
+      <img src={Img4} alt="" className="xl:h-[56vh] w-full" />
+      <div className="absolute inset-0 flex flex-col justify-center items-start px-2 sm:px-4 py-0">
         <h1 className="opacity-90 text-blue-900 text-lg sm:text-3xl md:text-4xl lg:text-5xl font-bold leading-tight">
           Home Healthcare
         </h1>
@@ -110,8 +110,8 @@ function AutoSlider() {
     </div>
 
     <div className="relative">
-      <img src={Img5} alt="" className="xl:h-[345px] w-full" />
-      <div className="absolute inset-0 flex flex-col justify-center items-start px-4 py-2">
+      <img src={Img5} alt="" className="xl:h-[56vh] w-full" />
+      <div className="absolute inset-0 flex flex-col justify-center items-start px-4 py-0">
         <h1 className="opacity-90 text-blue-900 text-lg sm:text-3xl md:text-4xl lg:text-5xl font-bold leading-tight">
           Pathology
         </h1>
@@ -125,8 +125,8 @@ function AutoSlider() {
     </div>
 
     <div className="relative">
-      <img src={Img6} alt="" className="xl:h-[345px] w-full" />
-      <div className="absolute inset-0 flex flex-col justify-center items-start px-2 sm:px-4 py-2">
+      <img src={Img6} alt="" className="xl:h-[56vh] w-full" />
+      <div className="absolute inset-0 flex flex-col justify-center items-start px-2 sm:px-4 py-0">
         <h1 className="opacity-90 text-blue-900 text-lg sm:text-3xl md:text-4xl lg:text-5xl font-bold leading-tight">
           Health Insurance
         </h1>
@@ -140,8 +140,8 @@ function AutoSlider() {
     </div>
 
     <div className="relative">
-      <img src={Img7} alt="" className="xl:h-[345px] w-full" />
-      <div className="absolute inset-0 flex flex-col justify-center items-start px-2 sm:px-4 py-2">
+      <img src={Img7} alt="" className="xl:h-[56vh] w-full" />
+      <div className="absolute inset-0 flex flex-col justify-center items-start px-2 sm:px-4 py-0">
         <h1 className="opacity-90 text-blue-900 text-lg sm:text-3xl md:text-4xl lg:text-5xl font-bold leading-tight">
           Corporate Health
         </h1>
@@ -155,8 +155,8 @@ function AutoSlider() {
     </div>
 
     <div className="relative">
-      <img src={Img8} alt="" className="xl:h-[345px] w-full" />
-      <div className="absolute inset-0 flex flex-col justify-center items-start px-2 sm:px-4 py-2">
+      <img src={Img8} alt="" className="xl:h-[56vh] w-full" />
+      <div className="absolute inset-0 flex flex-col justify-center items-start px-2 sm:px-4 py-0">
         <h1 className="opacity-90 text-blue-900 text-lg sm:text-3xl md:text-4xl lg:text-5xl font-bold leading-tight">
           Pharmacy
         </h1>
@@ -170,8 +170,8 @@ function AutoSlider() {
     </div>
 
     <div className="relative">
-      <img src={Img9} alt="" className="xl:h-[345px] w-full" />
-      <div className="absolute inset-0 flex flex-col justify-center items-start px-2 sm:px-4 py-2">
+      <img src={Img9} alt="" className="xl:h-[56vh] w-full" />
+      <div className="absolute inset-0 flex flex-col justify-center items-start px-2 sm:px-4 py-0">
         <h1 className="opacity-90 text-blue-900 text-lg sm:text-3xl md:text-4xl lg:text-5xl font-bold leading-tight">
         Diagnosis center
         </h1>
@@ -190,4 +190,4 @@ function AutoSlider() {
 }
 
 export default AutoSlider;
-9;
+

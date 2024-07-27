@@ -10,9 +10,9 @@ import AutoSlider1 from "../../Component/AutoSlider1";
 import GetLink from "../../Component/GetLink";
 import AllDiseases from "../../Component/AllDiseases";
 import ScrollingTagline from "../../Component/ScrollingTagline";
-// import OurPolicies from "../../Component/OurPolicies";
-// import Footer from "../../Component/Footer";
-
+import OurPolicies from "../../Component/OurPolicies";
+import Footer from "../../Component/Footer";
+import AarogyaDhan from '../../assets/Images/AarogyaDhan.jpeg'
 import Healthcard from '../../assets/Images/NewSilder/Aarogy Aadhar01.jpg'
 
 const Home = () => {
@@ -26,14 +26,15 @@ const Home = () => {
       </div>
       <div className="flex lg:hidden z-10 fixed top-[77px] sm:top-[100px] py-[2px] w-full bg-white">
         <ScrollingTagline />
-      </div>
-      <div className="mt-[105px] sm:mt-[135px] xl:mt-[155px] ">
+      </div >
+      <div className="mt-[15px] sm:mt-[40px] xl:mt-[65px] ">
+        <div className=" bg-white">
         <div className="xl:grid grid-cols-12">
           <div className="xl:col-span-8">
             <AutoSlider />
           </div>
           <div className="col-span-4 z-0 hidden xl:flex">
-            {/* <img src={Healthcard} alt="" className="w-full xl:h-[345px]" /> */}
+            <img src={AarogyaDhan} alt="" className="w-full xl:h-[56vh]" />
           </div>
         </div>
         <div className="hidden lg:flex">
@@ -41,6 +42,7 @@ const Home = () => {
         </div>
         <div className="lg:px-14 mt-2">
           <Connections />
+        </div>
         </div>
         <TreatmentSpecialities />
         <AllDiseases />
@@ -115,8 +117,8 @@ const Home = () => {
           <ServicePartner />
           <GetLink />
         </div>
-        {/* <OurPolicies /> */}
-        {/* <Footer /> */}
+        <OurPolicies /> 
+       <Footer />
       </div>
     </div>
   );
