@@ -12,7 +12,7 @@ const SpeedyRecovery = () => {
                     Your fundraising journey is successful! We wish you a speedy recovery!
                 </div>
                 <div className="flex justify-center space-x-4">
-                    <button style={buttonStyle} className="bg-gradient-to-r from-sky-400 to-blue-500 text-white font-bold py-2 px-4 rounded">
+                    <button style={buttonStyle} className="bg-blue-600 text-white font-bold py-2 px-4 rounded">
                         START A FREE FUNDRAISER
                     </button>
                     <button style={buttonStyle} className="border-2 border-blue-500 text-blue-500 font-bold py-2 px-4 rounded">

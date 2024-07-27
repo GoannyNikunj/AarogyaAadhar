@@ -79,7 +79,7 @@ const WhyFundraise = () => {
                 <p onClick={() => setShowMore(!showMore)} className='underline text-gray-800'> {showMore ? 'Click to view less' : 'Click to view all features'}</p>
             </div>
             <div className='text-center p-4'>
-                <button className="bg-gradient-to-r from-sky-400 to-blue-500 text-white font-bold py-2 px-4 rounded">
+                <button className="bg-blue-600 text-white font-bold py-2 px-4 rounded" style={{cursor:'pointer'}}>
                     START A FREE FUNDRAISER
                 </button>
             </div>
