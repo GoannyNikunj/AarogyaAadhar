@@ -3,7 +3,7 @@ import Aarogya_Aadhar_logo from "../assets/Images/Aarogya_Aadhar_logo.png";
 import { NavLink, useNavigate } from "react-router-dom";
 import { IoMenu, IoClose } from "react-icons/io5";
 import { FaPhoneAlt } from "react-icons/fa";
-import logo from "../assets/Images/Aarogyadhan.jpeg"
+import logo from "../assets/Images/AarogyaDhan.jpeg"
 
 
 const AarogyaDhanNavbar = () => {

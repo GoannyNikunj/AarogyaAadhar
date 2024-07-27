@@ -1,6 +1,6 @@
 import React from 'react'
 import "../css/style.css"
-import logo from "../assets/Images/Aarogyadhan.jpeg"
+import logo from "../assets/Images/AarogyaDhan.jpeg"
 const HowItWorks_Navbar = () => {
     return (
         <>

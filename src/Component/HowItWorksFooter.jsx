@@ -1,6 +1,6 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import logo from "../assets/Images/Aarogyadhan.jpeg"
+import logo from "../assets/Images/AarogyaDhan.jpeg"
 import RapidSSL from '../assets/Images/impactFooterIcons/RapidSSL.png'
 import Visa from '../assets/Images/impactFooterIcons/Visa.png'
 import MasterCard from '../assets/Images/impactFooterIcons/MasterCard.png'
