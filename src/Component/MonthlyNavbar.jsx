@@ -1,5 +1,5 @@
 import React from 'react';
-import logo from '../assets/Images/Aarogyadhan.jpeg';
+import logo from '../assets/Images/AarogyaDhan.jpeg';
 
 const MonthlyNavbar = () => {
   return (
