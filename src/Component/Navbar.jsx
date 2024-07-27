@@ -10,7 +10,8 @@ import { FaSearch } from "react-icons/fa";
 import { TiDocumentText } from "react-icons/ti";
 import { CgProfile } from "react-icons/cg";
 import { useNavigate } from "react-router-dom";
-import Aarogyadhan from '../assets/Images/AarogyaDhan.jpg'
+import { LiaIdCardSolid } from "react-icons/lia";
+import Aarogyadhan from "../assets/Images/AarogyaDhan.jpeg";
 
 const Navbar = () => {
   const navigate = useNavigate();
@@ -150,34 +151,34 @@ const Navbar = () => {
   ];
 
   const TopDropdownData = [
-    {
-      label: "Registration",
-      options: [
-        "As Patient",
-        "As Doctor",
-        "As Hospital / Clinic",
-        "As Pathology",
-        "As Diagnostic Center",
-        "As Ambulance",
-        "As Health Worker",
-        "As Corporate ",
-        "As Equipment Sellers",
-      ],
-    },
-    {
-      label: "Login",
-      options: [
-        "Patient",
-        "Doctor",
-        "Hospital / Clinic",
-        "Pathology",
-        "Diagnostic Center",
-        "Ambulance",
-        "Health Worker",
-        "Corporate Company",
-        "Equipment Sellers",
-      ],
-    },
+    // {
+    //   label: "Registration",
+    //   options: [
+    //     "As Patient",
+    //     "As Doctor",
+    //     "As Hospital / Clinic",
+    //     "As Pathology",
+    //     "As Diagnostic Center",
+    //     "As Ambulance",
+    //     "As Health Worker",
+    //     "As Corporate ",
+    //     "As Equipment Sellers",
+    //   ],
+    // },
+    // {
+    //   label: "Login",
+    //   options: [
+    //     "Patient",
+    //     "Doctor",
+    //     "Hospital / Clinic",
+    //     "Pathology",
+    //     "Diagnostic Center",
+    //     "Ambulance",
+    //     "Health Worker",
+    //     "Corporate Company",
+    //     "Equipment Sellers",
+    //   ],
+    // },
     { label: "Language", options: ["English", "Mrathi", "Hindi"] },
     // {
     //   label: "Help ?",
@@ -195,333 +196,209 @@ const Navbar = () => {
   }, []);
 
   return (
-        <div className=" fixed top-0 w-full z-50 bg-white">
-          <div className="flex justify-end bg-white py-1 px-7 space-x-2">
-            <div className="text-black flex items-center">
-              <p className=" font-semibold text-sm  text-blue-900">
-                {" "}
-                <span className=" font-semibold text-sm text-blue-900">
-                  Date & Time in India :{" "}
-                </span>{" "}
-                {dateTime.toLocaleDateString()} {dateTime.toLocaleTimeString()}
-              </p>
+    //         <div className=" fixed top-0 w-full z-50 bg-white">
+    //           <div className="flex justify-end bg-white py-1 px-7 space-x-2">
+    //             <div className="text-black flex items-center">
+    //               <p className=" font-semibold text-sm  text-blue-900">
+    //                 {" "}
+    //                 <span className=" font-semibold text-sm text-blue-900">
+    //                   Date & Time in India :{" "}
+    //                 </span>{" "}
+    //                 {dateTime.toLocaleDateString()} {dateTime.toLocaleTimeString()}
+    //               </p>
+    //             </div>
+
+    //             {TopDropdownData.map((dropdown, index) => (
+
+    //               <Dropdown
+    //                 key={index}
+    //                 label={dropdown.label}
+    //                 options={dropdown.options}
+    //                 textcolor={"text-[#2e1065]"}
+    //               />
+
+    //             ))}
+
+    //             <button className=" text-[14px] lg:text-[11px] xl:text-[13px] font-medium  text-[#2e1065] pb-1">Help ?</button>
+    //           </div>
+
+    //           <div className=" absolute top-[4px] left-5 ">
+    //             <img src={Aarogya_Aadhar_logo} alt="" className=" cursor-pointer" onClick={()=>navigate('/')}/>
+    //           </div>
+
+    //           <div className="flex w-full px-4 bg-white">
+    //             <div className="flex flex-col flex-grow">
+    //               <div className="grid grid-cols-3 gap-2 mb-2 ml-56">
+    //                 <div className=" flex justify-center items-center gap-2 col-span-1 border border-blue-700 w-full rounded-md px-2 h-8">
+    //                 <FaLocationDot className="text-gray-500"/>
+    //                 <input
+    //                   type="text"
+    //                   placeholder="Location"
+    //                   className="w-full outline-none"
+    //                 />
+    //                 </div>
+    //                 <div className=" flex justify-end items-center col-span-2 w-full rounded-md border outline-none border-blue-700 px-2 h-8">
+
+    //                 <input
+    //                   type="text"
+    //                   placeholder="Search For Healthcare Services"
+    //                   className="outline-none w-full"
+    //                 />
+    //                 <FaSearch  className=" text-gray-500"/>
+    //                 </div>
+    //               </div>
+    //               <div className="flex gap-2 lg:gap-1 xl:gap-2 ml-0">
+    //       <button className="flex-grow inline-flex justify-center items-center h-8 border bg-blue-600 border-blue-700 shadow-lg rounded-md text-sm lg:text-12px xl:text-sm font-medium" onClick={()=>navigate('/bookappointment')}>
+    //         <span className=" text-white flex justify-center items-center gap-2" > <span><FaCalendarAlt className=" h-4 w-4"/></span>  Book Free Appointment</span>
+    //       </button>
+
+    //       <button className="flex-grow inline-flex justify-center items-center h-8 border bg-blue-600 border-blue-700 shadow-lg rounded-md text-sm lg:text-12px xl:text-sm font-medium" onClick={()=>navigate('/bedBooking')}>
+    //         <span className=" text-white flex justify-center items-center gap-2"> <span><FaBed className=" h-5 w-5"/></span> Bed Booking</span>
+    //       </button>
+    //       <button className="flex-grow inline-flex bg-red-600 justify-center items-center h-8 border  border-red-700 shadow-lg rounded-md text-sm lg:text-12px xl:text-sm font-medium" onClick={()=>navigate('/AmbulanceBooking')}>
+    //         <span className=" text-white flex justify-center items-center gap-2"> <span><FaTruckMedical className=" h-5 w-5"/></span> Book Ambulance</span>
+    //       </button>
+    //       <button className="flex-grow inline-flex justify-center items-center h-8 border bg-blue-600 border-blue-700 shadow-lg rounded-md text-sm lg:text-12px xl:text-sm font-medium" onClick={()=>navigate('/apply-health-card')}>
+    //         <span className=" text-white  flex justify-center items-center gap-2"> <span><TiDocumentText className="h-5 w-5"/></span> Apply Health Card</span>
+    //       </button>
+    //       <button className="flex-grow inline-flex justify-center items-center h-8 border bg-blue-600 border-blue-700 shadow-lg rounded-md text-sm lg:text-12px xl:text-sm font-medium">
+    //         <span className=" text-white flex justify-center items-center gap-2"> <span><CgProfile className=" h-4 w-4"/></span> Job Portal</span>
+    //       </button>
+    //     </div>
+
+    //             </div>
+    //             <div
+    //   className="flex justify-center items-center h-[72px] w-[208px] mb-2 rounded-lg border  shadow-lg cursor-pointer border-blue-700 ml-4"
+    //   onClick={() => navigate('/aarogyadhan')}
+    // >
+    //   <img src={Aarogyadhan} alt="AarogyaDhan Logo" className="h-full w-full object-contain" />
+    // </div>
+    //           </div>
+
+    //           {/* </div> */}
+    //           <div className="flex justify-evenly bg-white shadow-lg pt-1 space-x-2">
+    //             {dropdownData.map((dropdown, index) => (
+    //               <Dropdown
+    //                 key={index}
+    //                 label={dropdown.label}
+    //                 options={dropdown.options}
+    //               />
+    //             ))}
+    //           </div>
+    //         </div>
+    <>
+     
+
+      <div className=" fixed top-0 w-full z-50 ">
+        <div className="flex justify-between pt-2 bg-[#d9eefd] px-4 pb-2">
+          <div className=" flex items-center">
+            <img src={Aarogya_Aadhar_logo} alt="" />
+          </div>
+
+          <div className="">
+          <div className=" flex justify- items-center col-span-2 w-full rounded-full border bg-gray-50 outline-none border-blue-700 px-2 h-10">
+              <input
+                type="text"
+                placeholder="Search For Healthcare Services"
+                className="outline-none bg-gray-50 w-full"
+              />
+              <FaSearch className=" text-gray-500" />
             </div>
+            <div className="flex justify-between gap-10 mt-2 mx-20">
+              <div className="h-14 flex flex-col justify-center items-center">
+                <div className="h-8  rounded-md flex bg-[#dfecf6] justify-center items-center">
+                  <FaCalendarAlt className="h-9 w-9 p-1 text-blue-900" />
+                </div>
+                <div className="relative group">
+                  <p className="text-[14px] cursor-pointer text-blue-900 max-w-[100px] whitespace-nowrap overflow-hidden text-ellipsis">
+                    Book Free Appointment
+                  </p>
+                  <span className="hidden group-hover:block absolute bg-blue-500 text-white text-xs rounded py-1 px-2 top-6 left-1/2 transform -translate-x-1/2 whitespace-nowrap z-10">
+                    Book Free Appointment
+                  </span>
+                </div>
+              </div>
 
+              <div className="h-14 flex flex-col justify-center items-center">
+                <div className="h-8 rounded-md flex bg-[#dfecf6] justify-center  items-center">
+                  <FaBed className="h-9 w-10 p-1 text-blue-900" />
+                </div>
+                <div className="relative group">
+                  <p className="text-[14px] cursor-pointer text-blue-900 max-w-[100px] whitespace-nowrap overflow-hidden text-ellipsis">
+                    Bed Booking
+                  </p>
+                  <span className="hidden group-hover:block absolute bg-blue-500 text-white text-xs rounded py-1 px-2 top-6 left-1/2 transform -translate-x-1/2 whitespace-nowrap z-10">
+                    Bed Booking
+                  </span>
+                </div>
+              </div>
+
+              <div className="h-14 flex flex-col justify-center items-center">
+                <div className="h-8  rounded-md flex bg-[#dfecf6] justify-center items-center">
+                  <FaTruckMedical className="h-8 w-10 p-1 text-red-500" />
+                </div>
+                <div className="relative group">
+                  <p className="text-[14px] cursor-pointer text-blue-900 max-w-[100px] whitespace-nowrap overflow-hidden text-ellipsis">
+                    Book Ambulance
+                  </p>
+                  <span className="hidden group-hover:block absolute bg-blue-500 text-white text-xs rounded py-1 px-2 top-6 left-1/2 transform -translate-x-1/2 whitespace-nowrap z-10">
+                    Book Ambulance
+                  </span>
+                </div>
+              </div>
+
+              <div className="h-14 flex flex-col justify-center items-center">
+                <div className="h-8 rounded-md flex bg-[#dfecf6] justify-center items-center">
+                  <LiaIdCardSolid className="h-11 w-10 p-1  text-blue-900" />
+                </div>
+                <div className="relative group">
+                  <p className="text-[14px] cursor-pointer text-blue-900 max-w-[100px] whitespace-nowrap overflow-hidden text-ellipsis">
+                    Apply Health Card
+                  </p>
+                  <span className="hidden group-hover:block absolute bg-blue-500 text-white text-xs rounded py-1 px-2 top-6 left-1/2 transform -translate-x-1/2 whitespace-nowrap z-10">
+                    Apply Health Card
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            
+          <button className=" text-[14px] lg:text-[12px] xl:text-[14px]  font-medium  text-[#2e1065] pb-1">
+          Registration
+        </button>
+        <button className=" text-[14px] lg:text-[12px] xl:text-[14px] ml-2  font-medium  text-[#2e1065] pb-1">
+          Login
+        </button>
+        <span className=" ml-2">
             {TopDropdownData.map((dropdown, index) => (
-
               <Dropdown
                 key={index}
                 label={dropdown.label}
                 options={dropdown.options}
                 textcolor={"text-[#2e1065]"}
               />
-
             ))}
-
-            <button className=" text-[14px] lg:text-[11px] xl:text-[13px] font-medium  text-[#2e1065] pb-1">Help ?</button>
-          </div>
-
-          <div className=" absolute top-[4px] left-5 ">
-            <img src={Aarogya_Aadhar_logo} alt="" className=" cursor-pointer" onClick={()=>navigate('/')}/>
-          </div>
-
-          <div className="flex w-full px-4 bg-white">
-            <div className="flex flex-col flex-grow">
-              <div className="grid grid-cols-3 gap-2 mb-2 ml-56">
-                <div className=" flex justify-center items-center gap-2 col-span-1 border border-blue-700 w-full rounded-md px-2 h-8">
-                <FaLocationDot className="text-gray-500"/>
-                <input
-                  type="text"
-                  placeholder="Location"
-                  className="w-full outline-none"
-                />
-                </div>
-                <div className=" flex justify-end items-center col-span-2 w-full rounded-md border outline-none border-blue-700 px-2 h-8">
-
-                <input
-                  type="text"
-                  placeholder="Search For Healthcare Services"
-                  className="outline-none w-full"
-                />
-                <FaSearch  className=" text-gray-500"/>
-                </div>
-              </div>
-              <div className="flex gap-2 lg:gap-1 xl:gap-2 ml-0">
-      <button className="flex-grow inline-flex justify-center items-center h-8 border bg-blue-600 border-blue-700 shadow-lg rounded-md text-sm lg:text-12px xl:text-sm font-medium" onClick={()=>navigate('/bookappointment')}>
-        <span className=" text-white flex justify-center items-center gap-2" > <span><FaCalendarAlt className=" h-4 w-4"/></span>  Book Free Appointment</span>
-      </button>
-
-      <button className="flex-grow inline-flex justify-center items-center h-8 border bg-blue-600 border-blue-700 shadow-lg rounded-md text-sm lg:text-12px xl:text-sm font-medium" onClick={()=>navigate('/bedBooking')}>
-        <span className=" text-white flex justify-center items-center gap-2"> <span><FaBed className=" h-5 w-5"/></span> Bed Booking</span>
-      </button>
-      <button className="flex-grow inline-flex bg-red-600 justify-center items-center h-8 border  border-red-700 shadow-lg rounded-md text-sm lg:text-12px xl:text-sm font-medium" onClick={()=>navigate('/AmbulanceBooking')}>
-        <span className=" text-white flex justify-center items-center gap-2"> <span><FaTruckMedical className=" h-5 w-5"/></span> Book Ambulance</span>
-      </button>
-      <button className="flex-grow inline-flex justify-center items-center h-8 border bg-blue-600 border-blue-700 shadow-lg rounded-md text-sm lg:text-12px xl:text-sm font-medium" onClick={()=>navigate('/apply-health-card')}>
-        <span className=" text-white  flex justify-center items-center gap-2"> <span><TiDocumentText className="h-5 w-5"/></span> Apply Health Card</span>
-      </button>
-      <button className="flex-grow inline-flex justify-center items-center h-8 border bg-blue-600 border-blue-700 shadow-lg rounded-md text-sm lg:text-12px xl:text-sm font-medium">
-        <span className=" text-white flex justify-center items-center gap-2"> <span><CgProfile className=" h-4 w-4"/></span> Job Portal</span>
-      </button>
-    </div>
-
-            </div>
-            <div
-  className="flex justify-center items-center h-[72px] w-[208px] mb-2 rounded-lg border  shadow-lg cursor-pointer border-blue-700 ml-4"
-  onClick={() => navigate('/aarogyadhan')}
->
-  <img src={Aarogyadhan} alt="AarogyaDhan Logo" className="h-full w-full object-contain" />
-</div>
-          </div>
-
-          {/* </div> */}
-          <div className="flex justify-evenly bg-white shadow-lg pt-1 space-x-2">
-            {dropdownData.map((dropdown, index) => (
-              <Dropdown
-                key={index}
-                label={dropdown.label}
-                options={dropdown.options}
-              />
-            ))}
+            </span>
+             <button className=" text-[14px] lg:text-[12px] xl:text-[14px] ml-1 font-medium  text-[#2e1065] pb-1">
+          Help?
+        </button>
           </div>
         </div>
 
-//     <div className=" fixed top-0 w-full z-50 bg-white">
-//       <div className="flex items-center justify-end bg-white py-2 px-7 space-x-2">
-       
-//         <div className=" ml-48 flex justify- items-center col-span-2 w-[35%] rounded-md border outline-none border-blue-700 px-2 h-10">
-//               <input
-//                 type="text"
-//                 placeholder="Search For Healthcare Services"
-//                 className="outline-none w-full"
-//               />
-//               <FaSearch className=" text-gray-500" />
-//             </div>
-
-//             <div className="text-black flex items-center">
-//           <p className=" font-semibold text-sm  text-blue-900">
-//             {" "}
-//             <span className=" font-semibold text-sm text-blue-900">
-//               Date & Time in India :{" "}
-//             </span>{" "}
-//             {dateTime.toLocaleDateString()} {dateTime.toLocaleTimeString()}
-//           </p>
-//         </div>
-//         {TopDropdownData.map((dropdown, index) => (
-//           <Dropdown
-//             key={index}
-//             label={dropdown.label}
-//             options={dropdown.options}
-//             textcolor={"text-[#2e1065]"}
-//           />
-//         ))}
-
-//         <button className=" text-[14px] lg:text-[11px] xl:text-[13px] font-medium  text-[#2e1065] pb-1">
-//           Help?
-//         </button>
-//       </div>
-
-//       <div className=" absolute top-[32px] left-5 ">
-//         <img
-//           src={Aarogya_Aadhar_logo}
-//           alt=""
-//           className=" cursor-pointer"
-//           onClick={() => navigate("/")}
-//         />
-//       </div>
-
-//       <div className="flex w-full px-4 bg-white">
-//         <div className="flex flex-col flex-grow">
-//           <div className="flex gap-2 mb-2 ml-56">
-//             {/* <div className=" flex justify-center items-center gap-2 col-span-1 border border-blue-700 w-full rounded-md px-2 h-8">
-//             <FaLocationDot className="text-gray-500"/>
-//             <input
-//               type="text"
-//               placeholder="Location"
-//               className="w-full outline-none"
-//             />
-//             </div> */}
-//             {/* <div className=" flex justify- items-center col-span-2 w-full rounded-md border outline-none border-blue-700 px-2 h-8">
-//               <input
-//                 type="text"
-//                 placeholder="Search For Healthcare Services"
-//                 className="outline-none w-full"
-//               />
-//               <FaSearch className=" text-gray-500" />
-//             </div> */}
-
-
-//             {/* <div className=" flex gap-5 justify-center items-center">
-//               <div className=" h-14 w-20  ">
-//                 <div className=" bg-blue-800 p- h-8 w-12 rounded-md flex justify-center items-center">
-//                   <FaCalendarAlt className=" h-6 w-10 text-white " />
-//                 </div>
-
-//                 <p className=" text-[12px] text-blue-900"> Book Free Appointment</p>
-//               </div>
-
-//               <div className=" h-14 w-20 ">
-//                 <div className=" bg-blue-800 p- h-8 w-12 rounded-md flex justify-center items-center">
-//                 <FaBed className=" h-6 w-10 text-white "/>
-//                 </div>
-
-//                 <p className=" text-[12px] text-blue-900"> Bed Booking </p>
-//               </div>
-
-//               <div className=" h-14 w-20">
-//                 <div className=" bg-blue-800 p- h-8 w-12 rounded-md flex justify-center items-center">
-//                 <FaTruckMedical className=" h-6 w-10 text-red-500 "/>
-//                 </div>
-
-//                 <p className=" text-[12px] text-blue-900">Book Ambulance</p>
-//               </div>
-
-             
-//               <div className=" h-14 w-20">
-//                 <div className=" bg-blue-800 p- h-8 w-12 rounded-md flex justify-center items-center">
-//                   <TiDocumentText className=" h-6 w-10 text-white " />
-//                 </div>
-
-//                 <p className=" text-[12px] text-blue-900">Apply Health Card</p>
-//               </div>
-
-//               <div className=" h-14 w-20">
-//                 <div className=" bg-blue-800 p- h-8 w-12 rounded-md flex justify-center items-center">
-//                 <CgProfile className=" h-6 w-10 text-white "/>
-//                 </div>
-
-//                 <p className=" text-[12px] text-blue-900 "> Job Portal</p>
-//               </div>
-
-//               <div className=" h-14 w-20">
-//                 <div className=" bg-blue-800 p- h-8 w-12 rounded-md flex justify-center items-center">
-//                 <GiCash className=" h-6 w-10 text-white"/>
-//                 </div>
-
-//                 <p className=" text-[12px] text-blue-900">AarogyaDhan</p>
-//               </div>
-//             </div> */}
-//           </div>
-     
-
-     
-    
-
-// <div className="grid grid-cols-12 gap-16 ml-52  justify-center items-center">
-//   <div className="col-span-9 flex justify-between">
-//     <div className="h-14 flex flex-col justify-center items-center">
-//       <div className="h-8 w-12 rounded-md flex justify-center items-center">
-//         <FaCalendarAlt className="h-6 w-10 text-blue-900" />
-//       </div>
-//       <div className="relative group">
-//         <p className="text-[14px] cursor-pointer text-blue-900 max-w-[100px] whitespace-nowrap overflow-hidden text-ellipsis">
-//           Book Free Appointment
-//         </p>
-//         <span className="hidden group-hover:block absolute bg-blue-500 text-white text-xs rounded py-1 px-2 top-6 left-1/2 transform -translate-x-1/2 whitespace-nowrap z-10">
-//           Book Free Appointment
-//         </span>
-//       </div>
-//     </div>
-
-//     <div className="h-14 flex flex-col justify-center items-center">
-//       <div className="h-8 w-12 rounded-md flex justify-center items-center">
-//         <FaBed className="h-6 w-10 text-blue-900" />
-//       </div>
-//       <div className="relative group">
-//         <p className="text-[14px] cursor-pointer text-blue-900 max-w-[100px] whitespace-nowrap overflow-hidden text-ellipsis">
-//           Bed Booking
-//         </p>
-//         <span className="hidden group-hover:block absolute bg-blue-500 text-white text-xs rounded py-1 px-2 top-6 left-1/2 transform -translate-x-1/2 whitespace-nowrap z-10">
-//           Bed Booking
-//         </span>
-//       </div>
-//     </div>
-
-//     <div className="h-14 flex flex-col justify-center items-center">
-//       <div className="h-8 w-12 rounded-md flex justify-center items-center">
-//         <FaTruckMedical className="h-6 w-10 text-red-500" />
-//       </div>
-//       <div className="relative group">
-//         <p className="text-[14px] cursor-pointer text-blue-900 max-w-[100px] whitespace-nowrap overflow-hidden text-ellipsis">
-//           Book Ambulance
-//         </p>
-//         <span className="hidden group-hover:block absolute bg-blue-500 text-white text-xs rounded py-1 px-2 top-6 left-1/2 transform -translate-x-1/2 whitespace-nowrap z-10">
-//           Book Ambulance
-//         </span>
-//       </div>
-//     </div>
-
-//     <div className="h-14 flex flex-col justify-center items-center">
-//       <div className="h-8 w-12 rounded-md flex justify-center items-center">
-//         <TiDocumentText className="h-6 w-10 text-blue-900" />
-//       </div>
-//       <div className="relative group">
-//         <p className="text-[14px] cursor-pointer text-blue-900 max-w-[100px] whitespace-nowrap overflow-hidden text-ellipsis">
-//           Apply Health Card
-//         </p>
-//         <span className="hidden group-hover:block absolute bg-blue-500 text-white text-xs rounded py-1 px-2 top-6 left-1/2 transform -translate-x-1/2 whitespace-nowrap z-10">
-//           Apply Health Card
-//         </span>
-//       </div>
-//     </div>
-
-//     <div className="h-14 flex flex-col justify-center items-center">
-//       <div className="h-8 w-12 rounded-md flex justify-center items-center">
-//         <CgProfile className="h-6 w-10 text-blue-900" />
-//       </div>
-//       <div className="relative group">
-//         <p className="text-[14px] cursor-pointer text-blue-900 max-w-[100px] whitespace-nowrap overflow-hidden text-ellipsis">
-//           Job Portal
-//         </p>
-//         <span className="hidden group-hover:block absolute bg-blue-500 text-white text-xs rounded py-1 px-2 top-6 left-1/2 transform -translate-x-1/2 whitespace-nowrap z-10">
-//           Job Portal
-//         </span>
-//       </div>
-//     </div>
-//   </div>
-// <div className="col-span-3 ml-5 mr-5">
-// <div className="h-[54px] border border-blue-800 rounded overflow-hidden">
-//   <img src={Aarogyadhan} alt="" className="h-full w-full object-contain" />
-// </div>
-
-// </div>
-  
-
-//   {/* Uncomment this section if you want to include the AarogyaDhan item */}
-//   {/* 
-//   <div className="h-14 flex flex-col justify-center items-center">
-//     <div className="h-8 w-12 rounded-md flex justify-center items-center">
-//       <GiCash className="h-6 w-10 text-blue-900" />
-//     </div>
-//     <div className="relative group">
-//       <p className="text-[14px] cursor-pointer text-blue-900 max-w-[100px] whitespace-nowrap overflow-hidden text-ellipsis">
-//         AarogyaDhan
-//       </p>
-//       <span className="hidden group-hover:block absolute bg-blue-500 text-white text-xs rounded py-1 px-2 top-6 left-1/2 transform -translate-x-1/2 whitespace-nowrap z-10">
-//         AarogyaDhan
-//       </span>
-//     </div>
-//   </div>
-//   */}
-// </div>
-
-
-//         </div>
-//         {/* <div className="flex justify-center items-center h-[72px] mb-2 w-52 rounded-lg border bg-blue-600 shadow-lg  cursor-pointer border-blue-700 ml-4" onClick={()=>navigate('/aarogyadhan')}>
-//           <h2 className=" flex justify-center items-center gap-2 text-xl text-white font-semibold"> <span><GiCash className=" h-10 w-10 text-white"/></span> AarogyaDhan</h2>
-//         </div> */}
-//       </div>
-
-//       <div className="flex justify-evenly bg-white shadow-lg pt-1 space-x-2">
-//         {dropdownData.map((dropdown, index) => (
-//           <Dropdown
-//             key={index}
-//             label={dropdown.label}
-//             options={dropdown.options}
-//           />
-//         ))}
-//       </div>
-//     </div>
+        <div className="flex justify-evenly bg-gray-100 shadow-lg pt-1 space-x-2">
+          {dropdownData.map((dropdown, index) => (
+            <Dropdown
+              key={index}
+              label={dropdown.label}
+              options={dropdown.options}
+              textcolor={"text-blue-600"}
+            />
+          ))}
+        </div>
+      </div>
+    </>
   );
 };
 

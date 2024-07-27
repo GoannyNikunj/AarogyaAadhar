@@ -78,7 +78,7 @@ const TreatmentSpecialities = () => {
 
   return (
     <div className="">
-      <div className=" py-2 lg:py-[8px] md:px-16">
+      <div className=" py-2 lg:py-[8px] md:px-16 ">
         <h2 className="text-center lg:mb-2 text-xl sm:text-2xl md:text-3xl font-bold text-blue-900">
           Treatment by Specialities
         </h2>
